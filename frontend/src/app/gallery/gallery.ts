@@ -6,12 +6,12 @@ import { KeywordInput } from './keyword-input/keyword-input';
 import { Levelstate } from '../services/levelstate';
 
 @Component({
-    selector: 'hl-level',
+    selector: 'hl-gallery',
     imports: [CommonModule, Artwork, KeywordInput, RouterLink],
-    templateUrl: './level.html',
-    styleUrl: './level.scss',
+    templateUrl: './gallery.html',
+    styleUrl: './gallery.scss',
 })
-export class Level {
+export class Gallery {
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
 
