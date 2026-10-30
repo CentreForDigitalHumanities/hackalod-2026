@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Question } from '../models/question';
+import { Art, DescribeQuestion } from '../models/question';
 
 @Injectable({
     providedIn: 'root',
 })
 export class Api {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {}
 
-    getQuestions(): Observable<Question[]> {
-        return this.http.get<Question[]>('/api/questions/');
+    getDescribeQuestions(): Observable<DescribeQuestion[]> {
+        return this.http.get<DescribeQuestion[]>('/api/describe-questions/');
     }
 
+    getIconclassWorks(icCode: string, n?: number): Observable<Art[]> {
+        return this.http.get<Art[]>(`/api/datasets/iconclass/${icCode}/images`, {
+            params: n ? { n } : {},
+        });
+    }
 }
