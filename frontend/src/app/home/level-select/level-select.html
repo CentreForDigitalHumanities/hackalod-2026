@@ -2,17 +2,24 @@
 
 @let options = options$ | async;
 @if (options) {
-    <div ngbDropdown>
-        <button class="btn btn-dark" ngbDropdownToggle>
-            Casus {{current}}
-        </button>
-        <div ngbDropdownMenu>
-            @for (question of options; track question.id) {
-                <button ngbDropdownItem
-                    (click)="onSelect(question.id)">
-                    Casus {{question.id}}
-                </button>
-            }
+    <div class="hstack gap-2">
+        <div ngbDropdown class="ms-auto">
+            <button class="btn btn-dark" ngbDropdownToggle>
+                Casus {{current}}
+            </button>
+            <div ngbDropdownMenu>
+                @for (question of options; track question.id) {
+                    <button ngbDropdownItem
+                        (click)="onSelect(question.id)">
+                        Casus {{question.id}}
+                    </button>
+                }
+            </div>
         </div>
+        <a class="btn btn-dark me-auto"
+            [routerLink]="['/bureau']">
+            <fa-icon [icon]="faArrowUp" />
+            Openen
+        </a>
     </div>
 }
