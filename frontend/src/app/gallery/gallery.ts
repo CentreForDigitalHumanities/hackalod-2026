@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Artwork } from './artwork/artwork';
-import { KeywordInput } from './keyword-input/keyword-input';
+import { KeywordInput } from '../desk/keyword-input/keyword-input';
 import { Levelstate } from '../services/levelstate';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
