@@ -1,0 +1,15 @@
+@let current = level();
+
+<div ngbDropdown>
+    <button class="btn btn-dark" ngbDropdownToggle>
+        Casus {{current}}
+    </button>
+    <div ngbDropdownMenu>
+        @for (i of levelOptions; track i) {
+            <button ngbDropdownItem
+                (click)="onSelect(i)">
+                Casus {{i}}
+            </button>
+        }
+    </div>
+</div>
