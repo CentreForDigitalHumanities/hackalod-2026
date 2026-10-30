@@ -1,6 +1,6 @@
-import { Component, computed, effect, input, output, signal } from '@angular/core';
+import { Component, computed, input, } from '@angular/core';
 import { DescribeQuestion } from '../../models/question';
-import { delay, map, of, scan, startWith, Subject, switchMap } from 'rxjs';
+import { delay, of, scan, startWith, Subject, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -26,13 +26,14 @@ export class KeywordInput {
         scan((acc, curr) => [...acc, curr], [] as string[]),
     )
 
-    onInputChange(value: string) {
+    onInputChange(value: string, element: HTMLInputElement) {
         const keywords = this.keywords();
         for (let keyword of Object.keys(keywords)) {
             const options = keywords[keyword];
             for (let option of options) {
                 if (this.matchesKeyword(value, option)) {
                     this.guessed$.next(option);
+                    setTimeout(() => element.value = '', 1000);
                 }
             }
         }

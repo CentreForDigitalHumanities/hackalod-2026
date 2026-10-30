@@ -12,6 +12,6 @@
     </p>
 
     <input class="form-control" id="input-keyword"
-        (input)="onInputChange($event.target.value)"
+        (input)="onInputChange($event.target.value, $event.target)"
         [class.is-valid]="showSuccess" />
 </div>
