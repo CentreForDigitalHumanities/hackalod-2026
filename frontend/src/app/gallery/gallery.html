@@ -1,7 +1,8 @@
 @let question = question$ | async;
 @let works = works$ | async;
 
-<div class="d-flex flex-column bg-gallery" style="height: 100%;">
+<div class="d-flex flex-column bg-gallery h-100"
+    [class.bg-detail]="focus() !== null">
     @if (question) {
         @if (focus(); as focused) {
             <div class="flex-grow-1 p-4">
