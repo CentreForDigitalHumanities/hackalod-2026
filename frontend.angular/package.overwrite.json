@@ -1,0 +1,31 @@
+{
+    "version": null,
+    "scripts": {
+        "ng": null,
+        "prebuild": "node ./build/build-pre.js",
+        "build": "ng build --base-href=/static/ --localize",
+        "i18n": "ng extract-i18n --output-path locale",
+        "preserve": "yarn prebuild",
+        "serve": "ng serve",
+        "start": "yarn serve",
+
+        "serve:nl": "ng serve --configuration=nl",
+        "stop": "lsof -t -i tcp:4200 | xargs kill -9 || echo \"not running\"",
+        "pretest": "yarn prebuild",
+        "test": "ng test --watch=true",
+        "test-once": "ng test --watch=false",
+        "watch": "ng build --watch"
+    },
+    "dependencies": {
+        "@fortawesome/angular-fontawesome": "^4.0.0",
+        "@fortawesome/fontawesome-svg-core": "^7.1.0",
+        "@fortawesome/free-solid-svg-icons": "^7.1.0",
+        "colors": "^1.4.0",
+        "@ng-bootstrap/ng-bootstrap": "^20.0.0",
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.8"
+    },
+    "devDependencies": {
+        "ng-extract-i18n-merge": "^3.2.1"
+    }
+}
