@@ -1,11 +1,23 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
+import { Gallery } from './gallery/gallery';
+import { About } from './about/about';
 
 const routes: Routes = [
     {
         path: 'home',
         component: Home,
         title: 'HackaLOD'
+    },
+    {
+        path: 'galerij',
+        component: Gallery,
+        title: 'HackaLOD',
+    },
+    {
+        path: 'over',
+        component: About,
+        title: 'HackaLOD',
     },
     {
         path: '',
