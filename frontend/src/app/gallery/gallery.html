@@ -1,16 +1,22 @@
 @let question = question$ | async;
 
-
-<div class="d-flex flex-column" style="height: 100%;">
+<div class="d-flex flex-column bg-gallery" style="height: 100%;">
     @if (question) {
-        <div class="p-4 flex-grow-1">
-            <div class="row">
-                @for (work of question.works; track $index) {
-                    <div class="col-2 p-3">
-                        <hl-artwork [work]="work" />
-                    </div>
-                }
-            </div>
+        <div class="p-4 flex-grow-1 d-flex flex-column">
+            @for (i of rows; track i) {
+                <div class="picture-row d-flex justify-content-center">
+                    @for (j of cols; track j) {
+                        @let index = (cols.length * i) + j;
+                        @let work = getPicture(question, index);
+                        @if (work) {
+                            <div class="picture-col p-2">
+                                <hl-artwork [work]="work" />
+                            </div>
+
+                        }
+                    }
+                </div>
+            }
         </div>
         <div class="p-4 text-end">
             <a class="btn btn-dark" [routerLink]="['/home']"
