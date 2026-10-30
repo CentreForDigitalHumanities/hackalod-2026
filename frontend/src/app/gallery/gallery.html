@@ -1,4 +1,5 @@
 @let question = question$ | async;
+@let works = works$ | async;
 
 <div class="d-flex flex-column bg-gallery" style="height: 100%;">
     @if (question) {
@@ -7,12 +8,11 @@
                 <div class="picture-row d-flex justify-content-center">
                     @for (j of cols; track j) {
                         @let index = (cols.length * i) + j;
-                        @let work = getPicture(question, index);
+                        @let work = getPicture(works, index);
                         @if (work) {
                             <div class="picture-col p-2">
                                 <hl-artwork [work]="work" />
                             </div>
-
                         }
                     }
                 </div>
