@@ -1,13 +1,18 @@
 @let question = question$ | async;
 
-<div class="p-5">
-    @if (question) {
-        <div class="row">
-            @for (work of question.works; track work.url) {
-                <div class="col-4 p-3">
-                    <img [src]="work.url" />
-                </div>
-            }
+@if (question) {
+    <div class="d-flex flex-column" style="height: 100%;">
+        <div class="p-5 flex-grow-1">
+            <div class="row">
+                @for (work of question.works; track work.url) {
+                    <div class="col-4 p-3">
+                        <img [src]="work.url" />
+                    </div>
+                }
+            </div>
         </div>
-    }
-</div>
+        <div class="p-4">
+            Input here
+        </div>
+    </div>
+}
