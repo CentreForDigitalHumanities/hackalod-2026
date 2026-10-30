@@ -1,7 +1,11 @@
 @let question = question$ | async;
 
 @if (question) {
-    @for (keyword of question.tag.keywords; track $index) {
-        {{keyword}}
-    }
+    <div class="row">
+        @for (work of question.works; track work.url) {
+            <div class="col">
+                <img [src]="work.url" />
+            </div>
+        }
+    </div>
 }
