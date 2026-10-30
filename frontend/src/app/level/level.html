@@ -1,1 +1,7 @@
-<p>level works!</p>
+@let question = question$ | async;
+
+@if (question) {
+    @for (keyword of question.tag.keywords; track $index) {
+        {{keyword}}
+    }
+}
