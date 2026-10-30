@@ -1,7 +1,8 @@
 import os.path as op
 
+from django.urls import reverse
 import iconclass
-from django.http import FileResponse, Http404
+from django.http import FileResponse, Http404, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.views.static import serve
@@ -12,12 +13,17 @@ from rijksmuseum import rijks
 
 
 @require_GET
-def iconclass_image(request, ic_code: str):
-    images = iconclass_examples.get_images(ic_code, n=1)
-    if not images or not op.isfile(images[0]):
-        raise Http404('No image found for this Iconclass code')
-    return FileResponse(open(images[0], 'rb'))
-
+def iconclass_images(request, ic_code: str):
+    images = iconclass_examples.get_images(ic_code, n=4)
+    urls = [
+        reverse('iconclass-image-file', args=[op.basename(path)])
+        for path in images
+    ]
+    objects = [
+        {'url': request.build_absolute_uri(url)}
+        for url in urls
+    ]
+    return JsonResponse(objects, safe=False)
 
 @require_GET
 def iconclass_image_file(request, filename: str):
