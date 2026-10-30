@@ -1,8 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Artwork } from './artwork/artwork';
-import { KeywordInput } from '../desk/keyword-input/keyword-input';
 import { Levelstate } from '../services/levelstate';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -12,7 +11,7 @@ import { Art } from '../models/question';
 @Component({
     selector: 'hl-gallery',
     imports: [
-        CommonModule, Artwork, KeywordInput, RouterLink, FontAwesomeModule,
+        CommonModule, Artwork, RouterLink, FontAwesomeModule,
         NgbTooltip,
     ],
     templateUrl: './gallery.html',
@@ -23,10 +22,12 @@ export class Gallery {
     question$ = this.levelState.question$;
     works$ = this.levelState.works$;
 
+    focus = signal<Art | null>(null);
+
     faArrowRight = faArrowRight;
 
     rows = [0, 1];
-    cols = [0, 1,2,3,4];
+    cols = [0, 1];
 
     getPicture(works: Art[] | null, index: number): Art | undefined {
         return works?.[index];

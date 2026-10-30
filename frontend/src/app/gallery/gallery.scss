@@ -1,9 +1,13 @@
 .picture-row {
-    max-height: 200px;
+    max-height: 300px;
 }
 
 .bg-gallery {
     background-image: url('../../../public/backgrounds/studeerkamer_schilderijen.png');
     background-position: center;
     background-size: cover;
+}
+
+.bg-detail {
+    background-image: url('../../../public/backgrounds/gallery-2.png')
 }
