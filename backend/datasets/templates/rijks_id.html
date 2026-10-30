@@ -1,0 +1,12 @@
+<html>
+<body>
+<h1>{{ name }}</h1>
+
+<ul>
+{% for class in iconclasses %}
+    <li><a href="{{ class.uri }}">{{ class }} - {{ class.label }}</a></li>
+{% endfor %}
+    </ul>
+<img src="{{ url }}" style="width: 50%">
+</body>
+</html>
