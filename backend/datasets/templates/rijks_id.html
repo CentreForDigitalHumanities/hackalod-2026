@@ -4,9 +4,12 @@
 
 <ul>
 {% for class in iconclasses %}
-    <li><a href="{{ class.uri }}">{{ class }} - {{ class.label }}</a></li>
+    <li><a href="/api/datasets/rijks/by-iconclass/{{ class }}">{{ class }} - {{ class.label }}</a></li>
 {% endfor %}
     </ul>
+
+<p>Years: {{ object.begin_year }} - {{ object.end_year }}</p>
+
 <img src="{{ url }}" style="width: 50%">
 </body>
 </html>

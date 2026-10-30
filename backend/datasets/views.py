@@ -28,6 +28,7 @@ def rijks_id(request, rijks_id: str):
     human_made_object = rijks.HumanMadeObject(rijks.id_to_url(rijks_id))
     iconclasses = human_made_object.visual_item.iconclass
     context = {
+        "object": human_made_object,
         "name": human_made_object.name,
         "iconclasses": iconclasses,
         "url": human_made_object.visual_item.digital_object.imageurl_small
