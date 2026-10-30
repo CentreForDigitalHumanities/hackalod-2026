@@ -1,6 +1,6 @@
 import { Observable, of } from "rxjs"
 
-export type ArtWork = {
+export type Art = {
     url: string,
 }
 
@@ -10,7 +10,7 @@ export type Tag = {
 
 export type Question = {
     id: number,
-    works: ArtWork[],
+    works: Art[],
     tag: Tag,
 }
 

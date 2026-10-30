@@ -6,7 +6,7 @@
             <div class="row">
                 @for (work of question.works; track work.url) {
                     <div class="col-4 p-3">
-                        <img [src]="work.url" />
+                        <hl-artwork [work]="work" />
                     </div>
                 }
             </div>
