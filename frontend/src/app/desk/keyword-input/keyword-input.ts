@@ -1,4 +1,4 @@
-import { Component, effect, input, output, signal } from '@angular/core';
+import { Component, computed, effect, input, output, signal } from '@angular/core';
 import { DescribeQuestion } from '../../models/question';
 
 @Component({
@@ -9,6 +9,7 @@ import { DescribeQuestion } from '../../models/question';
 })
 export class KeywordInput {
     question = input.required<DescribeQuestion>();
+    keywords = computed(() => this.question().keywords);
 
     guessed = signal<boolean>(false);
     result = output<void>();
@@ -22,12 +23,12 @@ export class KeywordInput {
     }
 
     onInputChange(value: string) {
-        for (let keyword of this.question().keywords.split(',')) {
-            if (this.matchesKeyword(value, keyword)) {
-                this.guessed.set(true);
-                break;
-            }
-        }
+        // for (let keyword of this.question().keywords.split(',')) {
+        //     if (this.matchesKeyword(value, keyword)) {
+        //         this.guessed.set(true);
+        //         break;
+        //     }
+        // }
     }
 
     private matchesKeyword(value: string, keyword: string): boolean {
