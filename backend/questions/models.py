@@ -11,7 +11,10 @@ class DescribeQuestion(models.Model):
     target_work = models.ForeignKey(Work,  on_delete=models.CASCADE)
     ic_code = models.CharField(max_length=100)
     label = models.CharField(max_length = 500)
-    keywords = models.CharField(max_length=5000, help_text='Comma-separated list of keywords')
+    keywords = models.JSONField(
+        default=dict,
+        help_text='Keywords grouped by category, e.g. {"persoon": ["orfeus", "orpheus"]}',
+    )
 
     def __str__(self):
         return self.label
