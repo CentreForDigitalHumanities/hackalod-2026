@@ -1,6 +1,6 @@
 from django.db import models
 from iconclass import init
-from datasets.
+from datasets.iconclass_examples import get_images
 
 ic = init()
 
@@ -12,9 +12,7 @@ class Question(models.Model):
     def works(self, *args, **kwargs):
         '''returns'''
         n = 10
-        return [
-
-        ]
+        return get_images(self.ic_code, n)
 
 
     def __str__(self):
