@@ -26,6 +26,15 @@ const exampleQuestion: Question = {
         {
             url: '/uu-cdh.svg',
         },
+        {
+            url: '/uu-cdh.svg',
+        },
+        {
+            url: '/uu-cdh.svg',
+        },
+        {
+            url: '/uu-cdh.svg',
+        },
     ],
     tag: {
         keywords: ['bos', 'bomen', 'woud']
