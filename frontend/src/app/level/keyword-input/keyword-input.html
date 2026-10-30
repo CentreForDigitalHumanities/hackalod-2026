@@ -1,1 +1,6 @@
-<p>keyword-input works!</p>
+<label class="form-label fw-bold" for="input-keyword">Kernwoorden...</label>
+<input class="form-control" id="input-keyword"
+    (change)="onInputChange($event.target.value)" />
+@if (guessed()) {
+    <p>Yay!</p>
+}
