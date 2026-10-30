@@ -5,7 +5,7 @@ import { DarkModeStore } from '../services/dark-mode-store';
 import { map } from 'rxjs';
 
 @Component({
-    selector: 'dh-footer',
+    selector: 'hl-footer',
     templateUrl: './footer.html',
     styleUrl: './footer.scss',
     imports: [CommonModule]
