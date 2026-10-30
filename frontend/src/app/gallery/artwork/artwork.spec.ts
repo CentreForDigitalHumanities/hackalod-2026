@@ -12,6 +12,9 @@ describe('Artwork', () => {
         }).compileComponents();
 
         fixture = TestBed.createComponent(Artwork);
+        fixture.componentRef.setInput('work', {
+            url: '/test.png',
+        })
         component = fixture.componentInstance;
         await fixture.whenStable();
     });
