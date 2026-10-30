@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { filter, map, switchMap } from 'rxjs';
-import { getQuestion } from '../models/question';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Artwork } from './artwork/artwork';
 import { KeywordInput } from './keyword-input/keyword-input';
+import { Levelstate } from '../services/levelstate';
 
 @Component({
     selector: 'hl-level',
@@ -13,14 +12,8 @@ import { KeywordInput } from './keyword-input/keyword-input';
     styleUrl: './level.scss',
 })
 export class Level {
-    activatedRoute = inject(ActivatedRoute);
-    id$ = this.activatedRoute.paramMap.pipe(
-        map(params => params.get('id')),
-    );
-    question$ = this.id$.pipe(
-        filter(id => !!id),
-        switchMap(id => getQuestion(id || '')),
-    );
+    levelState = inject(Levelstate);
+    question$ = this.levelState.question$;
 
     onSucces() {
         setTimeout(() => {
