@@ -72,11 +72,10 @@ class Command(object):
 def main(argv):
     already_in_project, cd_into_project = prepare_cwd()
     venv, create_virtualenv, activate_venv = prepare_virtualenv()
-    pip_tools = backpack = funcpack = False
+    pip_tools = backpack = False
     if venv:
         pip_tools = install_pip_tools()
         backpack = install_backend_packages()
-        funcpack = install_functest_packages()
     frontpack = install_frontend_packages()
     db, create_db = prepare_db()
     migrate = superuser = False
@@ -88,13 +87,13 @@ def main(argv):
     gitflow = False
     if main_branch:
         gitflow = setup_gitflow()
-    if not all([gitflow, superuser, frontpack, funcpack, pip_tools]):
+    if not all([gitflow, superuser, frontpack, pip_tools]):
         print('\nPlease read {} for information on failed commands.'.format(LOGFILE_NAME))
     print('\nAlmost ready to go! Just a couple more commands to run:')
     if not already_in_project: print(cd_into_project)
     if not venv: print(create_virtualenv)
     print(activate_venv)
-    if not (pip_tools and backpack and frontpack and funcpack): print(install_all_packages)
+    if not (pip_tools and backpack and frontpack): print(install_all_packages)
     if not db:
         print(create_db)
     if not migrate: print(run_migrations)
@@ -314,10 +313,6 @@ install_backend_packages = Command(
     ['yarn', 'install-back'],
 )
 
-install_functest_packages = Command(
-    'Install the functional test requirements',
-    ['yarn', 'install-func'],
-)
 
 install_frontend_packages = Command(
     'Install the frontend packages',
