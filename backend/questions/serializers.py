@@ -13,7 +13,11 @@ class QuestionSerializer(serializers.ModelSerializer):
             reverse('iconclass-image-file', args=[op.basename(path)])
             for path in obj.works()
         ]
-        return [request.build_absolute_uri(url) for url in urls]
+        objects = [
+            {'url': request.build_absolute_uri(url)}
+            for url in urls
+        ]
+        return objects
 
 
     class Meta:
