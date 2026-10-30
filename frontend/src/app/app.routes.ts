@@ -10,7 +10,7 @@ const routes: Routes = [
         title: 'HackaLOD'
     },
     {
-        path: 'galerij/:id',
+        path: 'galerij',
         component: Level,
         title: 'HackaLOD',
     },
