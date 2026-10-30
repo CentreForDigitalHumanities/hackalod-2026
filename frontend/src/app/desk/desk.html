@@ -9,11 +9,20 @@
             <fa-icon [icon]="faArrowRight" />
         </a>
     </div>
-    <div class="flex-grow-1">
-        <div class="ms-auto me-auto" style="width: 50%">
-            <img src="/uu-cdh.svg" />
+    @let question = question$ | async;
+    @if (question) {
+        <div class="flex-grow-1">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <img src="/uu-cdh.svg" />
+                </div>
+                <div class="col-3">
+                    <hl-keyword-input [question]="question" />
+                </div>
+            </div>
         </div>
-    </div>
+    }
     <div class="text-center">
         <a [routerLink]="['/home']" class="btn btn-dark">
             <fa-icon [icon]="faArrowDown" />
