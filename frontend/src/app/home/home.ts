@@ -1,5 +1,4 @@
-import { Component, computed } from "@angular/core";
-import { httpResource } from "@angular/common/http";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "dh-home",
@@ -7,10 +6,5 @@ import { httpResource } from "@angular/common/http";
     styleUrl: "./home.scss",
 })
 export class Home {
-    private hooraySource = httpResource<{ message: string; }[]>(() => '/api/example/');
 
-    public hooray = computed(() => {
-        const hoorayResult = this.hooraySource.value();
-        return hoorayResult ? hoorayResult[0].message : '';
-    });
 }
