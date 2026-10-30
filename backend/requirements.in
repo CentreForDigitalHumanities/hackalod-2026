@@ -10,3 +10,7 @@ pytest-xdist
 dj_rest_auth
 django-allauth
 requests-oauthlib
+
+# hackalod specific
+iconclass
+rdflib

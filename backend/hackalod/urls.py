@@ -27,6 +27,7 @@ urlpatterns = [
     path('api', RedirectView.as_view(url='/api/', permanent=True)),
     path('api-auth', RedirectView.as_view(url='/api-auth/', permanent=True)),
     path('admin/', admin.site.urls),
+    path('api/datasets/', include('datasets.urls')),
     path('api/', include(api_router.urls)),
     path('api-auth/', include(
         'rest_framework.urls',
