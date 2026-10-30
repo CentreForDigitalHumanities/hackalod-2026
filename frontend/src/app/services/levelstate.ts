@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { map, shareReplay, switchMap } from 'rxjs';
+import { map, shareReplay, startWith, Subject, switchMap } from 'rxjs';
 import { getQuestion } from '../models/question';
 
 @Injectable({
@@ -12,5 +12,12 @@ export class Levelstate {
         map(value => `${value}`),
         switchMap(id => getQuestion(id)),
         shareReplay(1),
+    );
+    solved$ = new Subject<void>();
+    isSolved$ = this.question$.pipe(
+        switchMap(() => this.solved$.pipe(
+            map(() => true),
+            startWith(false),
+        )),
     );
 }

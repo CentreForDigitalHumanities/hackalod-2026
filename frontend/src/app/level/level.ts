@@ -16,6 +16,7 @@ export class Level {
     question$ = this.levelState.question$;
 
     onSucces() {
+        this.levelState.solved$.next();
         setTimeout(() => {
             alert('Het is je gelukt!')
         }, 500)
