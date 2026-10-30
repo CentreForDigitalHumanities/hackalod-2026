@@ -36,6 +36,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'user', 'templates'),
+            os.path.join(BASE_DIR, 'datasets', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -92,4 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = []
+
+EUROPEANA_API_KEY = os.environ.get('EUROPEANA_API_KEY')
 PROXY_FRONTEND = True

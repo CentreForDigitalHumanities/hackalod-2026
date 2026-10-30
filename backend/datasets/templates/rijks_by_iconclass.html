@@ -1,0 +1,12 @@
+<html>
+<body>
+<h1>Matches for iconclass: {{ iconclass }} ({{ iconclass.label }})</h1>
+
+<ul>
+{% for object in human_made_objects %}
+    <li><a href="/api/datasets/rijks/by-id/{{ object.identifier }}">{{ object.name }}</a></li>
+{% endfor %}
+    </ul>
+<img src="{{ url }}" style="width: 50%">
+</body>
+</html>
