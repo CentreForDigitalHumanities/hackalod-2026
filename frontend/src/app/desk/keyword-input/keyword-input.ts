@@ -61,7 +61,7 @@ export class KeywordInput {
         const keywords = this.keywords();
         for (let keyword of Object.keys(keywords)) {
             if (!alreadyGuessed.includes(keyword)) {
-                const options = keywords[keyword];
+                const options = [keyword, ...keywords[keyword]];
                 for (let option of options) {
                     if (this.matchesKeyword(value, option)) {
                         this.guessed$.next(keyword);
