@@ -14,7 +14,8 @@ from rijksmuseum import rijks
 
 @require_GET
 def iconclass_images(request, ic_code: str):
-    images = iconclass_examples.get_images(ic_code, n=4)
+    n = int(request.GET.get('n', 4))
+    images = iconclass_examples.get_images(ic_code, n=n)
     urls = [
         reverse('iconclass-image-file', args=[op.basename(path)])
         for path in images
