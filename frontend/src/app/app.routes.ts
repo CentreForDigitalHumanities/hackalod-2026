@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
-import { Level } from './level/level';
+import { Gallery } from './gallery/gallery';
 import { About } from './about/about';
 
 const routes: Routes = [
@@ -10,8 +10,8 @@ const routes: Routes = [
         title: 'HackaLOD'
     },
     {
-        path: 'galerij/:id',
-        component: Level,
+        path: 'galerij',
+        component: Gallery,
         title: 'HackaLOD',
     },
     {

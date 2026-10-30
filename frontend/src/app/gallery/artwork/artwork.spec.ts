@@ -1,17 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Level } from './level';
+import { Artwork } from './artwork';
 
-describe('Level', () => {
-    let component: Level;
-    let fixture: ComponentFixture<Level>;
+describe('Artwork', () => {
+    let component: Artwork;
+    let fixture: ComponentFixture<Artwork>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [Level],
+            imports: [Artwork],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(Level);
+        fixture = TestBed.createComponent(Artwork);
+        fixture.componentRef.setInput('work', {
+            url: '/test.png',
+        })
         component = fixture.componentInstance;
         await fixture.whenStable();
     });

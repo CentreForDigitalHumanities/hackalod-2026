@@ -1,0 +1,20 @@
+.has-border-image {
+    position: relative;
+}
+
+.has-border-image > .artwork {
+    margin: 10px;
+}
+
+.border-image {
+    border-image-source: url('../../../../public/border.png');
+    border-image-slice: 175;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-width: 20px;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}

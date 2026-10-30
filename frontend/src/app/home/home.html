@@ -1,3 +1,12 @@
-<div class="p-5 bg-desk">
-    <a class="btn btn-dark" [routerLink]="['/galerij', 1]">Galerij</a>
+<div class="p-5 bg-desk d-flex flex-column">
+    <div class="d-flex flew-row justify-content-between">
+        <a class="btn btn-dark" [routerLink]="['/galerij']">Galerij</a>
+        <a class="btn btn-dark">Bibliotheek</a>
+    </div>
+    <div class="flex-grow-1">
+
+    </div>
+    <div class="text-center">
+        <hl-level-select />
+    </div>
 </div>
