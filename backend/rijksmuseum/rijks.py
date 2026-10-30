@@ -61,6 +61,13 @@ class HumanMadeObject(RObject):
             if identifier["type"] == "Name":
                 return identifier["content"]
 
+    def _get_type(self):
+        if "classified_as" in self.data and "notation" in self.data["classified_as"][0]:
+            notations = self.data["classified_as"][0]["notation"]
+            for notation in notations:
+                if notation["@language"] == "nl":
+                    return notation["@value"]
+
     def _get_years(self):
         begin_year = None
         end_year = None
@@ -78,6 +85,7 @@ class HumanMadeObject(RObject):
         self.visual_item = VisualItem(self.visual_item_uri)
         self.name = self._get_name()
         self.begin_year, self.end_year = self._get_years()
+        self.type = self._get_type()
 
     def __str__(self):
         return self.name

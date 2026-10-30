@@ -32,13 +32,15 @@ def iconclass_image_file(request, filename: str):
 
 
 def rijks_id(request, rijks_id: str):
-    human_made_object = rijks.HumanMadeObject(rijks.id_to_url(rijks_id))
+    url = rijks.id_to_url(rijks_id)
+    human_made_object = rijks.HumanMadeObject(url)
     iconclasses = human_made_object.visual_item.iconclass
     context = {
+        "url": url,
         "object": human_made_object,
         "name": human_made_object.name,
         "iconclasses": iconclasses,
-        "url": human_made_object.visual_item.digital_object.imageurl_small
+        "imageurl": human_made_object.visual_item.digital_object.imageurl_small
     }
     return render(request, 'rijks_id.html', context)
 
