@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Menu } from './menu/menu';
-import { Footer } from './footer/footer';
 import { ToastContainer } from './toast-container/toast-container';
 
 
@@ -11,7 +10,6 @@ import { ToastContainer } from './toast-container/toast-container';
     imports: [
         RouterOutlet,
         Menu,
-        Footer,
         ToastContainer
     ],
     templateUrl: './app.html',
