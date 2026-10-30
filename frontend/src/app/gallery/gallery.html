@@ -1,11 +1,12 @@
 @let question = question$ | async;
+@let works = works$ | async;
 
 
 <div class="d-flex flex-column" style="height: 100%;">
     @if (question) {
         <div class="p-4 flex-grow-1">
             <div class="row">
-                @for (work of question.works; track $index) {
+                @for (work of works; track $index) {
                     <div class="col-2 p-3">
                         <hl-artwork [work]="work" />
                     </div>

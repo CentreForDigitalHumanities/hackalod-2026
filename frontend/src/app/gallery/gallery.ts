@@ -20,6 +20,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 export class Gallery {
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
+    works$ = this.levelState.works$;
 
     faArrowRight = faArrowRight;
 
