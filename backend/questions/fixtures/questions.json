@@ -1,11 +1,19 @@
 [
-  {
-    "model": "questions.question",
-    "pk": 1,
-    "fields": {
-      "ic_code": "94O511",
-      "label": "Orpheus",
-      "keywords": "lier,orfeus,orpheus"
+    {
+        "model": "questions.work",
+        "pk": 1,
+        "fields": {
+            "image_url": "http://localhost:8000/static/iconclass_ai_set/images/IIHIM_-1112177387.jpg"
+        }
+    },
+    {
+        "model": "questions.describequestion",
+        "pk": 1,
+        "fields": {
+            "target_work": 1,
+            "ic_code": "94O511",
+            "label": "Orpheus",
+            "keywords": "lier,orfeus,orpheus"
+        }
     }
-  }
 ]

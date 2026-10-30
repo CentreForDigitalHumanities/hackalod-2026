@@ -2,17 +2,25 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Gallery } from './gallery/gallery';
 import { About } from './about/about';
+import { Library } from './library/library';
+import { Desk } from './desk/desk';
 
 const routes: Routes = [
     {
         path: 'home',
         component: Home,
-        title: 'HackaLOD'
+    },
+    {
+        path: 'bureau',
+        component: Desk,
     },
     {
         path: 'galerij',
         component: Gallery,
-        title: 'HackaLOD',
+    },
+    {
+        path: 'bibliotheek',
+        component: Library,
     },
     {
         path: 'over',

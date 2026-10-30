@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Gallery } from './gallery';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('Level', () => {
     let component: Gallery;
@@ -12,6 +14,8 @@ describe('Level', () => {
             imports: [Gallery],
             providers: [
                 provideRouter([]),
+                provideHttpClient(),
+                provideHttpClientTesting(),
             ]
         }).compileComponents();
 

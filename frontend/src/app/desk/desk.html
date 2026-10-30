@@ -1,0 +1,32 @@
+<div class="p-5 bg-desk h-100 d-flex flex-column">
+    <div class="d-flex flew-row justify-content-between">
+        <a class="btn btn-dark" [routerLink]="['/galerij']">
+            <fa-icon [icon]="faArrowLeft" />
+            Galerij
+        </a>
+        <a class="btn btn-dark" [routerLink]="['/bibliotheek']">
+            Bibliotheek
+            <fa-icon [icon]="faArrowRight" />
+        </a>
+    </div>
+    @let question = question$ | async;
+    @if (question) {
+        <div class="flex-grow-1">
+            <div class="row h-100 align-items-center">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <img src="/uu-cdh.svg" />
+                </div>
+                <div class="col-3">
+                    <hl-keyword-input [question]="question" />
+                </div>
+            </div>
+        </div>
+    }
+    <div class="text-center">
+        <a [routerLink]="['/home']" class="btn btn-dark">
+            <fa-icon [icon]="faArrowDown" />
+            Terug
+        </a>
+    </div>
+</div>
