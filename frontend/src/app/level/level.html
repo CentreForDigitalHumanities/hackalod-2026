@@ -1,11 +1,13 @@
 @let question = question$ | async;
 
-@if (question) {
-    <div class="row">
-        @for (work of question.works; track work.url) {
-            <div class="col">
-                <img [src]="work.url" />
-            </div>
-        }
-    </div>
-}
+<div class="p-5">
+    @if (question) {
+        <div class="row">
+            @for (work of question.works; track work.url) {
+                <div class="col-4 p-3">
+                    <img [src]="work.url" />
+                </div>
+            }
+        </div>
+    }
+</div>
