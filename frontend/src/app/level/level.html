@@ -12,7 +12,8 @@
             </div>
         </div>
         <div>
-            <hl-keyword-input [tag]="question.tag" />
+            <hl-keyword-input [tag]="question.tag"
+                (result)="onSucces()" />
         </div>
     </div>
 }

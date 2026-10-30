@@ -21,4 +21,10 @@ export class Level {
         filter(id => !!id),
         switchMap(id => getQuestion(id || '')),
     );
+
+    onSucces() {
+        setTimeout(() => {
+            alert('Het is je gelukt!')
+        }, 500)
+    }
 }
