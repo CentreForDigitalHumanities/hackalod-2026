@@ -11,3 +11,11 @@ export type DescribeQuestion = {
     label: string;
     keywords: string;
 };
+
+export type OneOutQuestion = {
+    id: number;
+    label: string;
+    target_ic_code: string;
+    context_ic_code: string;
+    hint: string;
+};
