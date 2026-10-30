@@ -65,7 +65,7 @@ export class KeywordInput {
                 for (let option of options) {
                     if (this.matchesKeyword(value, option)) {
                         this.guessed$.next(keyword);
-                        setTimeout(() => element.value = '', 1000);
+                        setTimeout(() => element.value = '', 500);
                     }
                 }
             }

@@ -22,7 +22,7 @@ export class Desk {
 
     onCompleted() {
         setTimeout(() => {
-            'Yay!'
+            alert('Yay!')
         }, 500);
     }
 }
