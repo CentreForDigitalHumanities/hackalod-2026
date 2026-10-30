@@ -2,6 +2,6 @@
     [class.bg-success-subtle]="guessed()">
     <label class="form-label fw-bold" for="input-keyword">Kernwoorden...</label>
     <input class="form-control" id="input-keyword"
-        (change)="onInputChange($event.target.value)"
+        (input)="onInputChange($event.target.value)"
         [class.is-valid]="guessed()" />
 </div>
