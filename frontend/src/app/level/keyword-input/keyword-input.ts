@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, effect, input, output, signal } from '@angular/core';
 import { Tag } from '../../models/question';
 
 @Component({
@@ -11,6 +11,15 @@ export class KeywordInput {
     tag = input.required<Tag>();
 
     guessed = signal<boolean>(false);
+    result = output<void>();
+
+    constructor() {
+        effect(() => {
+            if (this.guessed()) {
+                this.result.emit();
+            }
+        });
+    }
 
     onInputChange(value: string) {
         console.log(value);
