@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Question } from '../models/question';
 
 @Injectable({
     providedIn: 'root',
@@ -7,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class Api {
     constructor(private http: HttpClient) { }
 
-    getQuestions() {
-        return this.http.get('/api/questions/');
+    getQuestions(): Observable<Question[]> {
+        return this.http.get<Question[]>('/api/questions/');
     }
 
 }

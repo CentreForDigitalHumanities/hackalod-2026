@@ -1,16 +1,24 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { map, shareReplay, startWith, Subject, switchMap } from 'rxjs';
-import { getQuestion } from '../models/question';
+import { combineLatest, map, shareReplay, startWith, Subject, switchMap } from 'rxjs';
+import { Api } from './api';
 
 @Injectable({
     providedIn: 'root',
 })
 export class Levelstate {
+    api = inject(Api);
+    allQuestions$ = this.api.getQuestions().pipe(
+        shareReplay(1),
+    );
+
     level = signal<number>(1);
-    question$ = toObservable(this.level).pipe(
-        map(value => `${value}`),
-        switchMap(id => getQuestion(id)),
+    question$ = combineLatest([
+        this.allQuestions$,
+        toObservable(this.level),
+    ])
+    .pipe(
+        map(([questions, id]) => questions.find(q => q.id === id)),
         shareReplay(1),
     );
     solved$ = new Subject<void>();
