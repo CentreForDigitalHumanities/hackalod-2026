@@ -1,5 +1,5 @@
 import { Component, effect, input, output, signal } from '@angular/core';
-import { Question } from '../../models/question';
+import { DescribeQuestion } from '../../models/question';
 
 @Component({
     selector: 'hl-keyword-input',
@@ -8,7 +8,7 @@ import { Question } from '../../models/question';
     styleUrl: './keyword-input.scss',
 })
 export class KeywordInput {
-    question = input.required<Question>();
+    question = input.required<DescribeQuestion>();
 
     guessed = signal<boolean>(false);
     result = output<void>();

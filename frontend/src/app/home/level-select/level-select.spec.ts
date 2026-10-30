@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LevelSelect } from './level-select';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('LevelSelect', () => {
     let component: LevelSelect;
@@ -9,6 +11,10 @@ describe('LevelSelect', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [LevelSelect],
+            providers: [
+                provideHttpClient(),
+                provideHttpClientTesting(),
+            ],
         }).compileComponents();
 
         fixture = TestBed.createComponent(LevelSelect);
