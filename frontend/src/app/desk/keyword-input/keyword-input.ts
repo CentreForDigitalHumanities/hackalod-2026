@@ -1,7 +1,8 @@
 import { Component, computed, input, } from '@angular/core';
 import { DescribeQuestion } from '../../models/question';
-import { delay, of, scan, startWith, Subject, switchMap } from 'rxjs';
+import { combineLatest, delay, of, scan, startWith, Subject, switchMap, withLatestFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'hl-keyword-input',
@@ -12,6 +13,8 @@ import { CommonModule } from '@angular/common';
 export class KeywordInput {
     question = input.required<DescribeQuestion>();
     keywords = computed(() => this.question().keywords);
+
+    input$ = new Subject<[string, HTMLInputElement]>();
 
     guessed$ = new Subject<string>();
 
@@ -24,19 +27,39 @@ export class KeywordInput {
 
     keywordsGuessed$ = this.guessed$.pipe(
         scan((acc, curr) => [...acc, curr], [] as string[]),
+        startWith([]),
     )
 
+    constructor() {
+        this.input$.pipe(
+            withLatestFrom(this.keywordsGuessed$),
+            takeUntilDestroyed(),
+        ).subscribe(([[value, element], guessed]) =>
+            this.checkInput(value, element, guessed)
+        );
+    }
+
     onInputChange(value: string, element: HTMLInputElement) {
+        this.input$.next([value, element]);
+    }
+
+    private checkInput(
+        value: string, element: HTMLInputElement,
+        alreadyGuessed: string[]
+    ) {
         const keywords = this.keywords();
         for (let keyword of Object.keys(keywords)) {
-            const options = keywords[keyword];
-            for (let option of options) {
-                if (this.matchesKeyword(value, option)) {
-                    this.guessed$.next(option);
-                    setTimeout(() => element.value = '', 1000);
+            if (!alreadyGuessed.includes(keyword)) {
+                const options = keywords[keyword];
+                for (let option of options) {
+                    if (this.matchesKeyword(value, option)) {
+                        this.guessed$.next(keyword);
+                        setTimeout(() => element.value = '', 1000);
+                    }
                 }
             }
         }
+
     }
 
     private matchesKeyword(value: string, keyword: string): boolean {
