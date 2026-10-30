@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { filter, map, switchMap } from 'rxjs';
 import { getQuestion } from '../models/question';
 import { CommonModule } from '@angular/common';
+import { Artwork } from './artwork/artwork';
 
 @Component({
     selector: 'hl-level',
-    imports: [CommonModule],
+    imports: [CommonModule, Artwork],
     templateUrl: './level.html',
     styleUrl: './level.scss',
 })
