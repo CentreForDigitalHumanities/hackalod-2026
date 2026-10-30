@@ -1,8 +1,8 @@
-import { Component, computed, input, } from '@angular/core';
+import { Component, computed, input, output, } from '@angular/core';
 import { DescribeQuestion } from '../../models/question';
-import { combineLatest, delay, of, scan, startWith, Subject, switchMap, withLatestFrom } from 'rxjs';
+import { combineLatest, delay, filter, map, of, scan, startWith, Subject, switchMap, withLatestFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'hl-keyword-input',
@@ -13,6 +13,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class KeywordInput {
     question = input.required<DescribeQuestion>();
     keywords = computed(() => this.question().keywords);
+    keywords$ = toObservable(this.keywords);
 
     input$ = new Subject<[string, HTMLInputElement]>();
 
@@ -28,7 +29,13 @@ export class KeywordInput {
     keywordsGuessed$ = this.guessed$.pipe(
         scan((acc, curr) => [...acc, curr], [] as string[]),
         startWith([]),
+    );
+
+    complete$ = combineLatest([this.keywords$, this.keywordsGuessed$]).pipe(
+        filter(([all, guessed]) => this.allGuessed(Object.keys(all), guessed)),
     )
+
+    completed = output<void>();
 
     constructor() {
         this.input$.pipe(
@@ -37,6 +44,10 @@ export class KeywordInput {
         ).subscribe(([[value, element], guessed]) =>
             this.checkInput(value, element, guessed)
         );
+
+        this.complete$.pipe(
+            takeUntilDestroyed(),
+        ).subscribe(() => this.completed.emit());
     }
 
     onInputChange(value: string, element: HTMLInputElement) {
@@ -64,5 +75,9 @@ export class KeywordInput {
 
     private matchesKeyword(value: string, keyword: string): boolean {
         return value.toLowerCase() == keyword.toLowerCase();
+    }
+
+    private allGuessed(all: string[], guessed: string[]): boolean {
+        return !!all.length && all.length == guessed.length;
     }
 }

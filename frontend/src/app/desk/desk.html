@@ -18,7 +18,8 @@
                     <img src="/uu-cdh.svg" />
                 </div>
                 <div class="col-3">
-                    <hl-keyword-input [question]="question" />
+                    <hl-keyword-input [question]="question"
+                        (completed)="onCompleted()" />
                 </div>
             </div>
         </div>

@@ -20,4 +20,9 @@ export class Desk {
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
 
+    onCompleted() {
+        setTimeout(() => {
+            'Yay!'
+        }, 500);
+    }
 }
