@@ -18,13 +18,13 @@ const exampleQuestion: Question = {
     id: 1,
     works: [
         {
-            url: 'https://commons.wikimedia.org/wiki/File:CH.ZG.Walchwil_Walchwilerberg_Heumoosegg_2016-10-30_OrigX-R_gp.jpg'
+            url: '/uu-cdh.svg'
         },
         {
-            url: 'https://commons.wikimedia.org/wiki/File:Rhynchophorus_ferrugineus_(pupa)-2.jpg',
+            url: '/uu-cdh.svg',
         },
         {
-            url: 'https://commons.wikimedia.org/wiki/File:Natuurgebied_Petgatten_De_Feanhoop._19-10-2020._(actm.)_32.jpg',
+            url: '/uu-cdh.svg',
         },
     ],
     tag: {
