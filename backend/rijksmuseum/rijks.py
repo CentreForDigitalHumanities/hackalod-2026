@@ -47,6 +47,10 @@ class RObject:
         return self.uri.split("/")[-1]
 
 
+def parse_year(date: str):
+    return date.split('-')[0]
+
+
 class HumanMadeObject(RObject):
     """An actual art object - can be found in online catalogue"""
     name: None
@@ -57,17 +61,37 @@ class HumanMadeObject(RObject):
             if identifier["type"] == "Name":
                 return identifier["content"]
 
+    def _get_type(self):
+        if "classified_as" in self.data and "notation" in self.data["classified_as"][0]:
+            notations = self.data["classified_as"][0]["notation"]
+            for notation in notations:
+                if notation["@language"] == "nl":
+                    return notation["@value"]
+
+    def _get_years(self):
+        begin_year = None
+        end_year = None
+        if "produced_by" in self.data and "timespan" in self.data["produced_by"]:
+            timespan = self.data["produced_by"]["timespan"]
+            if "begin_of_the_begin" in timespan:
+                begin_year = parse_year(timespan["begin_of_the_begin"])
+            if "end_of_the_end" in timespan:
+                end_year = parse_year(timespan["end_of_the_end"])
+        return begin_year, end_year
+
     def parse(self):
         self.visual_item_uri = self.data["shows"][0]["id"]
         print(self.visual_item_uri)
         self.visual_item = VisualItem(self.visual_item_uri)
         self.name = self._get_name()
+        self.begin_year, self.end_year = self._get_years()
+        self.type = self._get_type()
 
     def __str__(self):
         return self.name
 
 class VisualItem(RObject):
-    iconclass: None
+    iconclass: list
 
     def __init__(self, uri: str):
         self.iconclass = []
@@ -83,7 +107,6 @@ class VisualItem(RObject):
 
 class DigitalObject(RObject):
     def parse(self):
-        print(self.data)
         self.imageurl = self.data["access_point"][0]["id"]
         self.imageurl_small = self.imageurl.replace("max", "800")
 

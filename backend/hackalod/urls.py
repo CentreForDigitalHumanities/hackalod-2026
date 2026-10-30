@@ -34,5 +34,5 @@ urlpatterns = [
         namespace='rest_framework',
     )),
     path('api/i18n/', i18n),path("users/", include("user.urls")),
-    spa_url,  # catch-all; unknown paths to be handled by a SPA
+    #spa_url,  # catch-all; unknown paths to be handled by a SPA
 ]
