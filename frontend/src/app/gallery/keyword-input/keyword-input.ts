@@ -1,5 +1,5 @@
 import { Component, effect, input, output, signal } from '@angular/core';
-import { Tag } from '../../models/question';
+import { Question } from '../../models/question';
 
 @Component({
     selector: 'hl-keyword-input',
@@ -8,7 +8,7 @@ import { Tag } from '../../models/question';
     styleUrl: './keyword-input.scss',
 })
 export class KeywordInput {
-    tag = input.required<Tag>();
+    question = input.required<Question>();
 
     guessed = signal<boolean>(false);
     result = output<void>();
@@ -22,8 +22,7 @@ export class KeywordInput {
     }
 
     onInputChange(value: string) {
-        console.log(value);
-        for (let keyword of this.tag().keywords) {
+        for (let keyword of this.question().keywords.split(',')) {
             if (this.matchesKeyword(value, keyword)) {
                 this.guessed.set(true);
                 break;
