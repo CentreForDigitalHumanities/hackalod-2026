@@ -94,5 +94,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = []
 
+# Dataset files, served at /api/datasets/images/
+DATA_ROOT = os.path.join(BASE_DIR, 'datasets', 'data')
+
 EUROPEANA_API_KEY = os.environ.get('EUROPEANA_API_KEY')
 PROXY_FRONTEND = True
