@@ -1,5 +1,7 @@
-<div class="has-border-image">
-    <img class="artwork" [src]="work().url">
-    <div class="border-image">
+@if (work().url; as url) {
+    <div class="has-border-image">
+        <img class="artwork" [src]="url">
+        <div class="border-image">
+        </div>
     </div>
-</div>
+}
