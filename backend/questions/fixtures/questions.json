@@ -1,0 +1,11 @@
+[
+  {
+    "model": "questions.question",
+    "pk": 1,
+    "fields": {
+      "ic_code": "94O511",
+      "label": "Orpheus",
+      "keywords": "lier,orfeus,orpheus"
+    }
+  }
+]

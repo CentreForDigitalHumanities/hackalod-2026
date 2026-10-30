@@ -17,7 +17,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'user',
     'revproxy',
-    'example'
+    'example',
+    'datasets',
+    'questions'
 ]
 
 MIDDLEWARE = [
