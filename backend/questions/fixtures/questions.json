@@ -3,7 +3,7 @@
         "model": "questions.work",
         "pk": 1,
         "fields": {
-            "image_url": "http://localhost:8000/static/iconclass_ai_set/images/IIHIM_-1112177387.jpg"
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/judith/judith.png"
         }
     },
     {
@@ -11,11 +11,12 @@
         "pk": 1,
         "fields": {
             "target_work": 1,
-            "ic_code": "94O511",
-            "label": "Orpheus",
+            "ic_code": "71U42731",
+            "label": "Judith & Holofernes",
             "keywords": {
-                "instrument": ["lier,gitaartje"],
-                "persoon": ["orfeus", "orpheus", "peter"]
+                "dode man": ["hoofd", "afgehakt hoofd", "dode man"],
+                "vrouw": ["vrouw", "vrouwen"],
+                "wapen": ["zwaard", "mes"]
             }
         }
     }
