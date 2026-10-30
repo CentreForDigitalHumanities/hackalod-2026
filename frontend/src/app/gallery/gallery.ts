@@ -7,6 +7,7 @@ import { Levelstate } from '../services/levelstate';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { Art } from '../models/question';
 
 @Component({
     selector: 'hl-gallery',
@@ -23,6 +24,13 @@ export class Gallery {
     works$ = this.levelState.works$;
 
     faArrowRight = faArrowRight;
+
+    rows = [0, 1];
+    cols = [0, 1,2,3,4];
+
+    getPicture(works: Art[] | null, index: number): Art | undefined {
+        return works?.[index];
+    }
 
     onSucces() {
         this.levelState.solved$.next();
