@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'hl-desk',
@@ -12,4 +12,5 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export class Desk {
     faArrowLeft = faArrowLeft;
     faArrowRight = faArrowRight;
+    faArrowDown = faArrowDown;
 }
