@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { Menu } from './menu/menu';
 import { Footer } from './footer/footer';
 import { ToastContainer } from './toast-container/toast-container';
-import { DarkModeStore } from './services/dark-mode-store';
 
 
 @Component({
@@ -19,20 +18,12 @@ import { DarkModeStore } from './services/dark-mode-store';
     styleUrl: './app.scss'
 })
 export class App {
-    private darkModeStore = inject(DarkModeStore);
     private document = inject(DOCUMENT);
-
-    private readonly title = 'HackaLod';
 
     constructor() {
         const style = this.document.createElement('link');
         style.rel = 'stylesheet';
         this.document.head.append(style);
-
-        this.darkModeStore.theme$.subscribe(theme => {
-            this.document.documentElement.setAttribute('data-bs-theme', theme);
-            style.href = `${theme}.css`;
-        });
     }
 
 }

@@ -7,15 +7,12 @@
                 <p>
                     <a [href]="env.sourceUrl" target="_blank" i18n>Source code</a>&nbsp;<ng-container i18n>(BSD 3-Clause License)</ng-container>
                 </p>
-                <p>
-                    <em><ng-container i18n>Version: </ng-container><span>{{env.version}}</span>&nbsp;(<span [title]="env.buildTime">{{ buildTime() }})</span></em>
-                </p>
             </div>
             <div class="col-lg-auto">
                 <a class="centre-logo"
                     href="https://cdh.uu.nl/about/research-software-lab/" target="_blank">
-                    <img [src]="logoSrc | async"
-                        alt="Centre for Digital Humanities, Utrecht University" i18n-alt width="450" height="105" />
+                    <img src="/uu-cdh.svg"
+                        alt="Centre for Digital Humanities, Utrecht University" width="450" height="105" />
                 </a>
             </div>
         </div>
