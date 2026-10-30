@@ -1,7 +1,6 @@
 @let question = question$ | async;
 
-
-<div class="d-flex flex-column" style="height: 100%;">
+<div class="d-flex flex-column bg-gallery" style="height: 100%;">
     @if (question) {
         <div class="p-4 flex-grow-1 d-flex flex-column">
             @for (i of rows; track i) {
