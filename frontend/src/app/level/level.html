@@ -1,8 +1,9 @@
 @let question = question$ | async;
 
-@if (question) {
-    <div class="d-flex flex-column" style="height: 100%;">
-        <div class="p-5 flex-grow-1">
+
+<div class="d-flex flex-column" style="height: 100%;">
+    @if (question) {
+        <div class="p-4 flex-grow-1">
             <div class="row">
                 @for (work of question.works; track $index) {
                     <div class="col-4 p-3">
@@ -11,9 +12,14 @@
                 }
             </div>
         </div>
+        <div class="p-4 text-end">
+            <a class="btn btn-dark" [routerLink]="['/home']">
+                Terug
+            </a>
+        </div>
         <div>
             <hl-keyword-input [tag]="question.tag"
                 (result)="onSucces()" />
         </div>
-    </div>
-}
+    }
+</div>

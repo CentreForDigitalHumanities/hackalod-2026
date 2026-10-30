@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { filter, map, switchMap } from 'rxjs';
 import { getQuestion } from '../models/question';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { KeywordInput } from './keyword-input/keyword-input';
 
 @Component({
     selector: 'hl-level',
-    imports: [CommonModule, Artwork, KeywordInput],
+    imports: [CommonModule, Artwork, KeywordInput, RouterLink],
     templateUrl: './level.html',
     styleUrl: './level.scss',
 })
