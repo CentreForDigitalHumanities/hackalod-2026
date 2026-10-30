@@ -3,26 +3,40 @@
 
 <div class="d-flex flex-column bg-gallery" style="height: 100%;">
     @if (question) {
-        <div class="p-4 flex-grow-1 d-flex flex-column">
-            @for (i of rows; track i) {
-                <div class="picture-row d-flex justify-content-center">
-                    @for (j of cols; track j) {
-                        @let index = (cols.length * i) + j;
-                        @let work = getPicture(works, index);
-                        @if (work) {
-                            <div class="picture-col p-2">
-                                <hl-artwork [work]="work" />
-                            </div>
+        @if (focus(); as focused) {
+            <div class="flex-grow-1 p-4">
+                <hl-artwork [work]="focused" />
+            </div>
+            <div class="text-center py-3">
+                <button class="btn btn-dark" (click)="focus.set(null)">
+                    Terug
+                </button>
+            </div>
+        } @else {
+            <div class="p-4 flex-grow-1 d-flex flex-column">
+                @for (i of rows; track i) {
+                    <div class="picture-row d-flex justify-content-center">
+                        @for (j of cols; track j) {
+                            @let index = (cols.length * i) + j;
+                            @let work = getPicture(works, index);
+                            @if (work) {
+                                <div class="picture-col p-2"
+                                    role="button" tabindex="1"
+                                    (click)="focus.set(work)"
+                                    (keydown.enter)="focus.set(work)">
+                                    <hl-artwork [work]="work" />
+                                </div>
+                            }
                         }
-                    }
-                </div>
-            }
-        </div>
-        <div class="p-4 text-end">
-            <a class="btn btn-dark" [routerLink]="['/bureau']"
-                ngbTooltip="Terug naar bureau">
-                <fa-icon [icon]="faArrowRight" />
-            </a>
-        </div>
+                    </div>
+                }
+            </div>
+            <div class="p-4 text-end">
+                <a class="btn btn-dark" [routerLink]="['/bureau']"
+                    ngbTooltip="Terug naar bureau">
+                    <fa-icon [icon]="faArrowRight" />
+                </a>
+            </div>
+        }
     }
 </div>

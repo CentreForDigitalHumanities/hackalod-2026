@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Artwork } from './artwork/artwork';
@@ -21,6 +21,8 @@ export class Gallery {
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
     works$ = this.levelState.works$;
+
+    focus = signal<Art | null>(null);
 
     faArrowRight = faArrowRight;
 
