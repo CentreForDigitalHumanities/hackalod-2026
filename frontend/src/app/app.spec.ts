@@ -17,16 +17,10 @@ describe('App', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'HackaLod'`, () => {
-        const fixture = TestBed.createComponent(App);
-        const app = fixture.debugElement.componentInstance;
-        expect(app.title).toEqual(`HackaLod`);
-    });
-
     it('should render title', () => {
         const fixture = TestBed.createComponent(App);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.navbar-brand').textContent).toContain('HackaLod');
+        expect(compiled.querySelector('.navbar-brand').textContent).toContain('HackaLOD');
     });
 });
