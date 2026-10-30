@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Gallery } from './gallery';
+import { provideRouter } from '@angular/router';
 
 describe('Level', () => {
     let component: Gallery;
@@ -9,6 +10,9 @@ describe('Level', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [Gallery],
+            providers: [
+                provideRouter([]),
+            ]
         }).compileComponents();
 
         fixture = TestBed.createComponent(Gallery);
