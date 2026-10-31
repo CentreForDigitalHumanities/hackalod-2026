@@ -33,6 +33,7 @@ export class Library {
     }
 
     getBookImage(i: number) {
+        if (i === 3) i = 0;
         return `/books/boek${i+1}.png`;
     }
 }
