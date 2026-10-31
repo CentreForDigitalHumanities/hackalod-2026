@@ -62,7 +62,7 @@
         "model": "questions.describequestion",
         "pk": 3,
         "fields": {
-            "target_work": 1,
+            "target_work": 3,
             "ic_code": "94O511",
             "label": "Orfeus & de dieren (question 1)",
             "keywords": {
@@ -74,7 +74,7 @@
     },
     {
         "model": "questions.oneoutquestion",
-        "pk": 1,
+        "pk": 2,
         "fields": {
             "target_ic_code": "94O511",
             "context_ic_code": "94O21",
