@@ -1,5 +1,5 @@
 @let question = question$ | async;
-<div class="p-5 bg-desk h-100 d-flex flex-column">
+<div class="bg-desk h-100 d-flex flex-column p-4">
     @if (!focus()) {
         <div class="d-flex flew-row justify-content-between">
             <a class="btn btn-dark" [routerLink]="['/galerij']">
@@ -50,10 +50,18 @@
         </div>
     } @else {
         @if (question) {
-            <div class="w-100" style="height: 80vh">
-                <img [src]="question.target_work.image_url"
-                    class="object-fit-contain w-100 h-100"
-                    />
+            <div class="flex-grow-1 p-4">
+                <div class="w-100" style="height: 65vh">
+                    <img [src]="question.target_work.image_url"
+                        class="object-fit-contain w-100 h-100"
+                        />
+                </div>
+            </div>
+            <div class="pt-4 text-center">
+                <button class="btn btn-dark" (click)="focus.set(false)">
+                    <fa-icon [icon]="faArrowDown" />
+                    Terug
+                </button>
             </div>
         }
     }
