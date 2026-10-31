@@ -13,7 +13,6 @@ def import_rkd_data(filename: str):
         work_data = data[ic_code]
         for work in work_data:
             if Work.objects.filter(id_in_source=work["source"]).exists():
-                print(f"Skipping {ic_code} as it already exists")
                 continue
             work_obj = Work(
                 ic_code=ic_code,
