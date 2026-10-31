@@ -65,6 +65,8 @@ class HumanMadeObject(RObject):
         if "classified_as" in self.data and "notation" in self.data["classified_as"][0]:
             notations = self.data["classified_as"][0]["notation"]
             for notation in notations:
+                if isinstance(notation, str):
+                    return notation
                 if notation["@language"] == "nl":
                     return notation["@value"]
 
@@ -111,8 +113,9 @@ class DigitalObject(RObject):
         self.imageurl_small = self.imageurl.replace("max", "800")
 
 
-def europeana_search(query: str):
-    uri = f"https://api.europeana.eu/record/v2/search.json?wskey={settings.EUROPEANA_API_KEY}&query={query}"
+
+def europeana_search(query: str, start=1):
+    uri = f"https://api.europeana.eu/record/v2/search.json?wskey={settings.EUROPEANA_API_KEY}&query={query}&start={start}"
     headers = {
         "Accept": "application/json",
         "X-Api-Key": settings.EUROPEANA_API_KEY
@@ -120,11 +123,10 @@ def europeana_search(query: str):
     data = requests.get(uri, headers=headers).json()
     items = []
     for item in data["items"]:
-        print(item)
         if item["dataProvider"][0] != "Rijksmuseum":
             continue
         items.append(item["edmIsShownAt"][0])  # Handle
-    return items
+    return items, data["totalResults"]
 
 
 def resolve_handle(handle: str):
@@ -134,5 +136,5 @@ def resolve_handle(handle: str):
 
 
 def search_by_iconclass(iconclass: str):
-    items = [resolve_handle(x) for x in europeana_search(f"iconclass:{iconclass}")]
+    items = [resolve_handle(x[0]) for x in europeana_search(f"iconclass:{iconclass}")]
     return items
