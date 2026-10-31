@@ -1,6 +1,18 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap, tap, withLatestFrom } from 'rxjs';
+import {
+    BehaviorSubject,
+    combineLatest,
+    distinctUntilChanged,
+    map,
+    of,
+    shareReplay,
+    startWith,
+    Subject,
+    switchMap,
+    tap,
+    withLatestFrom,
+} from 'rxjs';
 import { Api } from './api';
 
 @Injectable({
@@ -13,7 +25,9 @@ export class Levelstate {
     level = signal<number>(1);
     casus$ = combineLatest([this.allCasussen$, toObservable(this.level)]).pipe(
         map(([cassusen, id]) => cassusen.find((q) => q.id === id)),
+        distinctUntilChanged(),
         shareReplay(1),
+
         tap(() => this.stage$.next(1)),
     );
 
@@ -68,8 +82,8 @@ export class Levelstate {
         map(([casus, stage, allBooks]) => {
             return allBooks.filter((book) => {
                 return book.casus === casus?.id && book.game === stage;
-            })
-        })
+            });
+        }),
     );
 
     nextStage() {
