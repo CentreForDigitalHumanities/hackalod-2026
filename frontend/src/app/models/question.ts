@@ -34,3 +34,10 @@ export type Casus = {
     question2: OneOutQuestion;
     // question3: ??
 };
+
+export type LibraryBook = {
+    id: number;
+    game: number;
+    casus: number;
+    html: string;
+}

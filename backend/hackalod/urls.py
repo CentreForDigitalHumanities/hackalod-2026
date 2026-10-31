@@ -17,6 +17,7 @@ api_router = routers.DefaultRouter()  # register viewsets with this router
 api_router.register(r'describe-questions', question_views.DescribeQuestionViewset)
 api_router.register(r'one-out-questions', question_views.OneOutQuestionViewset)
 api_router.register(r'casussen', question_views.CasusViewset)
+api_router.register(r'library', question_views.LibraryViewset)
 
 if settings.PROXY_FRONTEND:
     spa_url = re_path(r'^(?P<path>.*)$', proxy_frontend)

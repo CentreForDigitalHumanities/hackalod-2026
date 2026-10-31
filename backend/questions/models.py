@@ -49,3 +49,12 @@ class Casus(models.Model):
     question1 = models.ForeignKey(DescribeQuestion, on_delete=models.CASCADE)
     question2 = models.ForeignKey(OneOutQuestion, on_delete=models.CASCADE)
     # question3 = TO BE IMPLEMENTED
+
+    def __str__(self):
+        return f"{self.id}: {self.label}"
+
+
+class LibraryBook(models.Model):
+    casus = models.ForeignKey(Casus, on_delete=models.CASCADE)
+    game = models.IntegerField()
+    html = models.TextField()

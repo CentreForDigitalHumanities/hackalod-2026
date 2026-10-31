@@ -2,7 +2,8 @@ import os.path as op
 
 from django.urls import reverse
 from rest_framework import serializers
-from questions.models import Casus, DescribeQuestion, OneOutQuestion, Work
+from questions.models import Casus, DescribeQuestion, OneOutQuestion, Work, LibraryBook
+
 
 class WorkSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,3 +31,9 @@ class CasusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Casus
         fields = ('id', 'label', 'question1', 'question2')
+
+
+class LibraryBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LibraryBook
+        fields = ('id', 'casus', 'game', 'html')

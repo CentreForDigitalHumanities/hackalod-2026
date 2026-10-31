@@ -32,6 +32,16 @@ export class Levelstate {
     );
     stage$ = new BehaviorSubject<number>(1);
 
+    allBooks$ = this.api.getLibraryBooks().pipe(shareReplay(1));
+
+    libraryBooks$ = combineLatest([this.casus$, this.stage$, this.allBooks$]).pipe(
+        map(([casus, stage, allBooks]) => {
+            return allBooks.filter((book) => {
+                return book.casus === casus?.id && book.game === stage;
+            })
+        })
+    );
+
     nextStage() {
         this.stage$.next(this.stage$.value + 1);
     }

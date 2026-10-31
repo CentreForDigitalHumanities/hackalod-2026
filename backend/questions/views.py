@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from .models import Casus, DescribeQuestion, OneOutQuestion
-from .serializers import CasusSerializer, DescribeQuestionSerializer, OneOutQuestionSerializer
+from .models import Casus, DescribeQuestion, OneOutQuestion, LibraryBook
+from .serializers import CasusSerializer, DescribeQuestionSerializer, OneOutQuestionSerializer, LibraryBookSerializer
+
 
 class DescribeQuestionViewset(viewsets.ModelViewSet):
     queryset = DescribeQuestion.objects.all()
@@ -13,3 +14,7 @@ class OneOutQuestionViewset(viewsets.ModelViewSet):
 class CasusViewset(viewsets.ModelViewSet):
     queryset = Casus.objects.all()
     serializer_class = CasusSerializer
+
+class LibraryViewset(viewsets.ModelViewSet):
+    queryset = LibraryBook.objects.all()
+    serializer_class = LibraryBookSerializer

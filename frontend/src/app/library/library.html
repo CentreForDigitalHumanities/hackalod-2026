@@ -1,6 +1,12 @@
 <div class="bg-library h-100 p-4">
+    @let books = books$ | async;
     <a [routerLink]="['/bureau']" class="btn btn-dark"
         ngbTooltip="Terug naar bureau">
         <fa-icon [icon]="faArrowLeft" />
     </a>
+    @if(books) {
+        @for (book of books; track book.id) {
+            <button class="btn" (click)="showBook(book)">Boek {{ book.id }}</button>
+        }
+    }
 </div>
