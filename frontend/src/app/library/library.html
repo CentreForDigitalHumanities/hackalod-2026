@@ -1,21 +1,36 @@
 <div class="bg-library h-100 p-4">
     @let books = books$ | async;
-    <a [routerLink]="['/bureau']" class="btn btn-dark"
-        ngbTooltip="Terug naar bureau">
-        <fa-icon [icon]="faArrowLeft" />
-    </a>
-    <div>
-        @if(books) {
-            @for (book of books; track book.id; let i = $index) {
-                <img [src]="getBookImage(i)" style="width: 20%" (click)="openBook(book)">
-            }
-        }
-    </div>
-    @if(showBook) {
-        <div>
-            <div [innerHTML]="bookHtml">
+    <div class="row h-100">
+        <div class="col ">
+            <div class="d-flex h-100 flex-column">
+                <div>
+                    <a [routerLink]="['/bureau']" class="btn btn-dark"
+                        ngbTooltip="Terug naar bureau">
+                        <fa-icon [icon]="faArrowLeft" />
+                    </a>
+                </div>
+                @if(showBook) {
+                    <div class="flex-grow-1 bg-dark rounded p-4 mt-4">
+                        <button class="btn btn-secondary float-end" (click)="closeBook()">
+                            <fa-icon [icon]="faTimes" />
+                        </button>
+                        <div class="h-100" style="overflow-y: scroll;">
+                            <div [innerHTML]="bookHtml">
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-            <button class="btn btn-primary" (click)="closeBook()">Boek sluiten</button>
         </div>
-    }
+        <div class="col-1">
+            <div class="vstack gap-3">
+                @if(books) {
+                    @for (book of books; track book.id; let i = $index) {
+                        <img [src]="getBookImage(i)" style="width: 100%" (click)="openBook(book)">
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
 </div>

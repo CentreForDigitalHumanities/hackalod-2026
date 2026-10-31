@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { Levelstate } from '../services/levelstate';
 import { CommonModule } from '@angular/common';
@@ -19,6 +19,8 @@ export class Library {
     faArrowLeft = faArrowLeft;
     bookHtml: string = "";
     showBook: boolean = false;
+
+    faTimes = faTimes;
 
     openBook(book: LibraryBook) {
         this.bookHtml = book.html;
