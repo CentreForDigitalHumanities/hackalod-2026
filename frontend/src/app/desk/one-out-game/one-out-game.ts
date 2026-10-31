@@ -17,6 +17,7 @@ export class OneOutGame {
 
     oneoutQuestion$ = this.levelState.oneoutQuestion$;
 
+    // two common works plus the original picture
     private nCommonWorks = 3;
 
     commonWorks$ = this.levelState.oneOutCommonWorks$;

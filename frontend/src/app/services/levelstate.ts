@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap, tap, withLatestFrom } from 'rxjs';
 import { Api } from './api';
 
 @Injectable({
@@ -38,8 +38,18 @@ export class Levelstate {
         map((works) => works[0]),
     );
 
+    // two works sharing the target iconclass code, plus the original picture, in random order
     oneOutCommonWorks$ = this.oneOutQuestionRefreshed$.pipe(
-        switchMap((question) => this.api.getIconclassWorks(question?.target_ic_code ?? '', 3)),
+        switchMap((question) => this.api.getIconclassWorks(question?.target_ic_code ?? '', 2)),
+        withLatestFrom(this.describeQuestion$),
+        map(([works, describeQuestion]) => {
+            const original = describeQuestion?.target_work;
+            const all = original ? works.concat([{ url: original.image_url }]) : works;
+            return all
+                .map((work) => ({ work, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ work }) => work);
+        }),
     );
 
     refreshOneOutWorks() {
