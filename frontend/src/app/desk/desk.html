@@ -28,7 +28,25 @@
             }
         </div>
 
-        <div class="text-center">
+        <div class="hstack gap-2 me-auto ms-auto">
+            <div ngbDropdown>
+                <button class="btn btn-dark" ngbDropdownToggle>
+                    @let stage = stage$ | async;
+                    @if (stage) {
+                        {{stages[stage - 1]}}
+                    } @else {
+                        {{stages[0]}}
+                    }
+                </button>
+                <div ngbDropdownMenu>
+                    @for (stage of stages; track $index; let index = $index) {
+                        <button ngbDropdownItem
+                            (click)="setStage(index + 1)">
+                            {{stage}}
+                        </button>
+                    }
+                </div>
+            </div>
             <a [routerLink]="['/home']" class="btn btn-dark">
                 <fa-icon [icon]="faArrowDown" />
                 Terug

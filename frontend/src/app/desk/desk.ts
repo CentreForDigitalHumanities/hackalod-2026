@@ -7,13 +7,17 @@ import { CommonModule } from '@angular/common';
 import { DescribeGame } from './describe-game/describe-game';
 import { TargetArt } from '../models/question';
 import { OneOutGame } from './one-out-game/one-out-game';
+import { NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'hl-desk',
     imports: [
-        RouterLink, FontAwesomeModule, CommonModule, DescribeGame,
-        OneOutGame,
-    ],
+    RouterLink, FontAwesomeModule, CommonModule, DescribeGame,
+    OneOutGame,
+    NgbDropdown, NgbDropdownToggle, NgbDropdownButtonItem, NgbDropdownItem,
+    NgbDropdownMenu,
+    NgbDropdownToggle
+],
     templateUrl: './desk.html',
     styleUrl: './desk.scss',
 })
@@ -28,4 +32,12 @@ export class Desk {
 
     focus = signal<TargetArt | null>(null);
 
+    stages = [
+        'Beschrijven',
+        'Vergelijken',
+    ];
+
+    setStage(value: number) {
+        this.stage$.next(value);
+    }
 }
