@@ -32,7 +32,7 @@ export type Casus = {
     label: string;
     question1: DescribeQuestion;
     question2: OneOutQuestion;
-    // question3: ??
+    reward_text: string;
 };
 
 export type LibraryBook = {

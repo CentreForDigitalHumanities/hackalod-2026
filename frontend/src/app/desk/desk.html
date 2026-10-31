@@ -1,4 +1,6 @@
 @let question = question$ | async;
+@let casus = casus$ | async;
+
 <div class="bg-desk h-100 d-flex flex-column p-4"
     [class.bg-desk-closeup]="focus()">
     @if (!focus()) {
@@ -76,13 +78,19 @@
         }
     }
 </div>
-
 <ng-template #successModal let-modal>
+    @let stage = stage$ | async;
     <div class="modal-body">
-        Correct!
+        @switch (stage) {
+        @case (1) {
+        Correct!<br> In het volgende onderdeel ga je afbeeldingen vergelijken.
+        }
+        @case (2) {
+        <div [innerHTML]="casus?.reward_text"></div>
+        }
+        }
     </div>
     <div class="modal-footer">
-        @let stage = stage$ | async;
         @switch (stage) {
             @case (1) {
                 <button class="btn btn-success"

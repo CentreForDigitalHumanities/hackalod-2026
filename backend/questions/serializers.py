@@ -30,7 +30,7 @@ class CasusSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Casus
-        fields = ('id', 'label', 'question1', 'question2')
+        fields = ('id', 'label', 'question1', 'question2', 'reward_text')
 
 
 class LibraryBookSerializer(serializers.ModelSerializer):

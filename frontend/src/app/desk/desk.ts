@@ -12,12 +12,18 @@ import { NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, N
 @Component({
     selector: 'hl-desk',
     imports: [
-    RouterLink, FontAwesomeModule, CommonModule, DescribeGame,
-    OneOutGame,
-    NgbDropdown, NgbDropdownToggle, NgbDropdownButtonItem, NgbDropdownItem,
-    NgbDropdownMenu,
-    NgbDropdownToggle,
-],
+        RouterLink,
+        FontAwesomeModule,
+        CommonModule,
+        DescribeGame,
+        OneOutGame,
+        NgbDropdown,
+        NgbDropdownToggle,
+        NgbDropdownButtonItem,
+        NgbDropdownItem,
+        NgbDropdownMenu,
+        NgbDropdownToggle,
+    ],
     templateUrl: './desk.html',
     styleUrl: './desk.scss',
 })
@@ -29,14 +35,12 @@ export class Desk {
 
     levelState = inject(Levelstate);
     question$ = this.levelState.describeQuestion$;
+    casus$ = this.levelState.casus$;
     stage$ = this.levelState.stage$;
 
     focus = signal<TargetArt | Art | null>(null);
 
-    stages = [
-        'Beschrijven',
-        'Vergelijken',
-    ];
+    stages = ['Beschrijven', 'Vergelijken'];
 
     onSuccess(modalContent: TemplateRef<any>, stage: number) {
         this.modalService.open(modalContent);
