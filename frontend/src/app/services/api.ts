@@ -18,7 +18,7 @@ export class Api {
     }
 
     getIconclassWorks(icCode: string, n?: number): Observable<Art[]> {
-        return this.http.get<Art[]>(`/api/datasets/iconclass-guess/${icCode}/images`, {
+        return this.http.get<Art[]>(`/api/datasets/iconclass/${icCode}/images`, {
             params: n ? { n } : {},
         });
     }
