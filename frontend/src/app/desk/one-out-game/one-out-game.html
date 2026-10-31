@@ -11,7 +11,7 @@
                 <fa-icon [icon]="faMagnifyingGlass" />
             </button>
             <button class="btn btn-dark" (click)="refreshWorks()">
-            
+
                 <fa-icon [icon]="faRefresh" />
                 Geef me een nieuwe set afbeeldingen
             </button>
@@ -32,6 +32,7 @@
                                 class="w-100 object-fit-contain"
                                 style="height: 25vh; cursor: pointer;"
                                 [class.wrong-guess]="wrong.includes(index)"
+                                [class.correct-guess]="index === correct && isComplete()"
                                 (click)="onSelect(index, work)">
                         </div>
                     }

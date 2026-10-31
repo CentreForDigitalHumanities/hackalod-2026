@@ -45,6 +45,7 @@ export class OneOutGame {
     magnifyMode = signal<boolean>(false);
 
     completed = output<void>();
+    isComplete = signal<boolean>(false);
     focus = output<Art>();
 
     wrongGuesses = signal<number[]>([]);
@@ -54,9 +55,10 @@ export class OneOutGame {
             this.focus.emit(work);
         } else {
             if (index == this.correct) {
+                this.isComplete.set(true);
                 setTimeout(() => {
                     this.completed.emit();
-                });
+                }, 500);
             } else {
                 this.wrongGuesses.update((value) => value.concat([index]));
             }
