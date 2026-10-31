@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     templateUrl: './one-out-game.html',
     styleUrl: './one-out-game.scss',
 })
-export class OneOutGame {}
+export class OneOutGame {
+    rows = [0, 1];
+    cols = [0, 1];
+}

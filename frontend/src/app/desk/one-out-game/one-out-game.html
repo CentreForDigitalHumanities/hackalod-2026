@@ -5,4 +5,15 @@
             Welke hoort er niet bij?
         </div>
     </div>
+    <div class="col-6">
+        @for (row of rows; track row) {
+            <div class="row">
+                @for (col of cols; track col) {
+                    <div class="col">
+                        test
+                    </div>
+                }
+            </div>
+        }
+    </div>
 </div>
