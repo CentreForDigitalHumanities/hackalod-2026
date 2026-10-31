@@ -26,9 +26,9 @@ export class Levelstate {
     casus$ = combineLatest([this.allCasussen$, toObservable(this.level)]).pipe(
         map(([cassusen, id]) => cassusen.find((q) => q.id === id)),
         distinctUntilChanged(),
-        shareReplay(1),
-
+        // reset the stage only when the casus actually changes, not on every new subscriber
         tap(() => this.stage$.next(1)),
+        shareReplay(1),
     );
 
     describeQuestion$ = this.casus$.pipe(
