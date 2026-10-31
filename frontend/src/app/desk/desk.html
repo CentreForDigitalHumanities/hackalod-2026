@@ -20,6 +20,9 @@
                         <hl-describe-game [question]="question"
                             (focus)="focus.set($event)" />
                     }
+                    @case (2) {
+                        <hl-one-out-game />
+                    }
 
                 }
             }
