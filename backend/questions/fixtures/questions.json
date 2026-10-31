@@ -121,5 +121,41 @@
             "label": "Familieportret (question 2)",
             "hint": "???"
         }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 1,
+        "fields": {
+            "label": "Judith & Holofernes",
+            "question1": 1,
+            "question2": 1
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 2,
+        "fields": {
+            "label": "Lazarus",
+            "question1": 2,
+            "question2": 2
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 3,
+        "fields": {
+            "label": "Orfeus & de dieren",
+            "question1": 3,
+            "question2": 3
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 4,
+        "fields": {
+            "label": "Familieportret",
+            "question1": 4,
+            "question2": 4
+        }
     }
 ]
