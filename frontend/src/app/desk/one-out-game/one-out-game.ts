@@ -24,7 +24,10 @@ export class OneOutGame {
 
     onSelect(index: number) {
         if (index == this.correct) {
-            this.completed.emit();
+            setTimeout(() => {
+                alert('Correct!')
+                this.completed.emit();
+            });
         } else {
             this.wrongGuesses.update((value) => value.concat([index]));
         }
