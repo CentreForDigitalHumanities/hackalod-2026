@@ -4,6 +4,7 @@ import { Gallery } from './gallery/gallery';
 import { About } from './about/about';
 import { Library } from './library/library';
 import { Desk } from './desk/desk';
+import { Portrait } from './portrait/portrait';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'bibliotheek',
         component: Library,
+    },
+    {
+        path: 'portret',
+        component: Portrait,
     },
     {
         path: 'over',
