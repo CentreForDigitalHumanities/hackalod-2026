@@ -9,6 +9,8 @@ def import_rijks_data(iconclass: str):
     while True:
         items, total = europeana_search(iconclass, i)
         count = len(items)
+        if count == 0:
+            break
         print(f"Found {count} items starting at {i} (total: {total})")
         for item in items:
             rijks_uri = resolve_handle(item)
@@ -35,22 +37,11 @@ def import_rijks_data(iconclass: str):
             break
 
 
-def import_rkd_data(iconclass: str):
-    pass
-
-
 class Command(BaseCommand):
-    help = "Import works by Iconclass code"
+    help = "Import works of Rijksmuseum by Iconclass code"
 
     def add_arguments(self, parser):
         parser.add_argument('iconclass_code', type=str)
-        parser.add_argument('source', type=str)
 
     def handle(self, *args, **options):
-        if options['source'] not in ['rijks', 'rkd']:
-            raise CommandError("Invalid source - must be 'rijks' or 'rkd'")
-
-        if options['source'] == 'rijks':
-            import_rijks_data(options['iconclass_code'])
-        elif options['source'] == 'rkd':
-            import_rkd_data(options['iconclass_code'])
+        import_rijks_data(options['iconclass_code'])
