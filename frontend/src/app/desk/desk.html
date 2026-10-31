@@ -1,5 +1,6 @@
 @let question = question$ | async;
-<div class="bg-desk h-100 d-flex flex-column p-4">
+<div class="bg-desk h-100 d-flex flex-column p-4"
+    [class.bg-desk-closeup]="focus()">
     @if (!focus()) {
         <div class="d-flex flew-row justify-content-between">
             <a class="btn btn-dark" [routerLink]="['/galerij']">
@@ -31,7 +32,7 @@
                     </div>
                     <div class="col-6 text-center">
                         <img [src]="question.target_work.image_url"
-                            style="max-height: 400px; max-width: 100%"
+                            style="max-height: 400px; max-width: 100%; cursor: pointer;"
                             class="border border-dark border-3"
                             (click)="focus.set(true)" />
                     </div>
