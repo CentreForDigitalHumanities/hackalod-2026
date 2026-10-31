@@ -33,10 +33,4 @@ export class Gallery {
         return works?.[index];
     }
 
-    onSucces() {
-        this.levelState.solved$.next();
-        setTimeout(() => {
-            alert('Het is je gelukt!')
-        }, 500)
-    }
 }

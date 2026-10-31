@@ -24,7 +24,8 @@ export class Desk {
 
     onCompleted() {
         setTimeout(() => {
-            alert('Yay!')
+            alert('Yay!');
+            this.levelState.nextStage();
         }, 500);
     }
 }

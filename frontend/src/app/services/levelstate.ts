@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { combineLatest, map, of, shareReplay, startWith, Subject, switchMap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap } from 'rxjs';
 import { Api } from './api';
 
 @Injectable({
@@ -25,11 +25,9 @@ export class Levelstate {
         switchMap(question => question ? this.api.getIconclassWorks(question.ic_code) : of([])),
         shareReplay(1),
     );
-    solved$ = new Subject<void>();
-    isSolved$ = this.question$.pipe(
-        switchMap(() => this.solved$.pipe(
-            map(() => true),
-            startWith(false),
-        )),
-    );
+    stage$ = new BehaviorSubject<number>(1);
+
+    nextStage() {
+        this.stage$.next(this.stage$.value + 1);
+    }
 }
