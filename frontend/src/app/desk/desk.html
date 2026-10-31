@@ -13,36 +13,18 @@
             </a>
         </div>
 
-        @if (question) {
-            <div class="flex-grow-1">
-                <div class="row h-100 align-items-center">
-                    <div class="col-3">
-                        <div class="bg-dark p-4 rounded">
-                            <p>
-                                Een kunsthistoricus moet goed kunnen kijken. Schrijf op wat je
-                                ziet en raad de juiste termen.
-                            </p>
+        <div class="flex-grow-1">
+            @if (question) {
+                @switch (stage$ | async) {
+                    @case (1) {
+                        <hl-describe-game [question]="question"
+                            (focus)="focus.set($event)" />
+                    }
 
-                            <p class="mb-0">
-                                Vergelijk de afbeelding met andere
-                                werken in de <b>galerij</b>. Welke
-                                elementen komen overeen?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-6 text-center">
-                        <img [src]="question.target_work.image_url"
-                            style="max-height: 400px; max-width: 100%; cursor: pointer;"
-                            class="border border-dark border-3"
-                            (click)="focus.set(true)" />
-                    </div>
-                    <div class="col-3">
-                        <hl-keyword-input [question]="question"
-                            (completed)="onCompleted()" />
-                    </div>
-                </div>
-            </div>
-        }
+                }
+            }
+        </div>
+
         <div class="text-center">
             <a [routerLink]="['/home']" class="btn btn-dark">
                 <fa-icon [icon]="faArrowDown" />
@@ -59,7 +41,7 @@
                 </div>
             </div>
             <div class="pt-4 text-center">
-                <button class="btn btn-dark" (click)="focus.set(false)">
+                <button class="btn btn-dark" (click)="focus.set(null)">
                     <fa-icon [icon]="faArrowDown" />
                     Terug
                 </button>

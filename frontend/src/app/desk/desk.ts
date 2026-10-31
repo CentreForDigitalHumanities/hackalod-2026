@@ -5,10 +5,14 @@ import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-
 import { KeywordInput } from './keyword-input/keyword-input';
 import { Levelstate } from '../services/levelstate';
 import { CommonModule } from '@angular/common';
+import { DescribeGame } from './describe-game/describe-game';
+import { TargetArt } from '../models/question';
 
 @Component({
     selector: 'hl-desk',
-    imports: [RouterLink, FontAwesomeModule, KeywordInput, CommonModule],
+    imports: [
+        RouterLink, FontAwesomeModule, KeywordInput, CommonModule, DescribeGame
+    ],
     templateUrl: './desk.html',
     styleUrl: './desk.scss',
 })
@@ -19,13 +23,8 @@ export class Desk {
 
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
+    stage$ = this.levelState.stage$;
 
-    focus = signal<boolean>(false);
+    focus = signal<TargetArt | null>(null);
 
-    onCompleted() {
-        setTimeout(() => {
-            alert('Yay!');
-            this.levelState.nextStage();
-        }, 500);
-    }
 }
