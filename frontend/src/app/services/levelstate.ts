@@ -21,6 +21,11 @@ export class Levelstate {
         shareReplay(1),
     );
 
+    oneoutQuestion$ = this.casus$.pipe(
+        map((casus) => casus?.question2),
+        shareReplay(1),
+    );
+
     works$ = this.describeQuestion$.pipe(
         switchMap((question) => (question ? this.api.getIconclassWorks(question.ic_code) : of([]))),
         shareReplay(1),

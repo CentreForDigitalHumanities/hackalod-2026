@@ -13,12 +13,15 @@
     </div>
     <div class="col-9">
         @let wrong = wrongGuesses();
+        @let commonWorks = (commonWorks$ | async) ?? [];
+        @let oneoutWork = oneoutWork$ | async;
         @for (row of rows; track row) {
             <div class="row h-100">
                 @for (col of cols; track col) {
-                    @let index = (rows.length * row) + col;
+                    @let index = (cols.length * row) + col;
+                    @let work = getWork(index, commonWorks, oneoutWork);
                     <div class="col p-2">
-                        <img src="/uu-cdh.svg"
+                        <img [src]="work?.url ?? '/uu-cdh.svg'"
                             class="w-100 h-100 object-fit-contain"
                             style="cursor: pointer;"
                             [class.wrong-guess]="wrong.includes(index)"
