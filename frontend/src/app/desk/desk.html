@@ -1,48 +1,69 @@
 @let question = question$ | async;
-<div class="p-5 bg-desk h-100 d-flex flex-column">
-    <div class="d-flex flew-row justify-content-between">
-        <a class="btn btn-dark" [routerLink]="['/galerij']">
-            <fa-icon [icon]="faArrowLeft" />
-            Galerij
-        </a>
-        <a class="btn btn-dark" [routerLink]="['/bibliotheek']">
-            Bibliotheek
-            <fa-icon [icon]="faArrowRight" />
-        </a>
-    </div>
-    @if (question) {
-        <div class="flex-grow-1">
-            <div class="row h-100 align-items-center">
-                <div class="col-3">
-                    <div class="bg-dark p-4 rounded">
-                        <p>
-                            Een kunsthistoricus moet goed kunnen kijken. Schrijf op wat je
-                            ziet en raad de juiste termen.
-                        </p>
+<div class="bg-desk h-100 d-flex flex-column p-4"
+    [class.bg-desk-closeup]="focus()">
+    @if (!focus()) {
+        <div class="d-flex flew-row justify-content-between">
+            <a class="btn btn-dark" [routerLink]="['/galerij']">
+                <fa-icon [icon]="faArrowLeft" />
+                Galerij
+            </a>
+            <a class="btn btn-dark" [routerLink]="['/bibliotheek']">
+                Bibliotheek
+                <fa-icon [icon]="faArrowRight" />
+            </a>
+        </div>
 
-                        <p class="mb-0">
-                            Vergelijk de afbeelding met andere
-                            werken in de <b>galerij</b>. Welke
-                            elementen komen overeen?
-                        </p>
+        @if (question) {
+            <div class="flex-grow-1">
+                <div class="row h-100 align-items-center">
+                    <div class="col-3">
+                        <div class="bg-dark p-4 rounded">
+                            <p>
+                                Een kunsthistoricus moet goed kunnen kijken. Schrijf op wat je
+                                ziet en raad de juiste termen.
+                            </p>
+
+                            <p class="mb-0">
+                                Vergelijk de afbeelding met andere
+                                werken in de <b>galerij</b>. Welke
+                                elementen komen overeen?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6 text-center">
+                        <img [src]="question.target_work.image_url"
+                            style="max-height: 400px; max-width: 100%; cursor: pointer;"
+                            class="border border-dark border-3"
+                            (click)="focus.set(true)" />
+                    </div>
+                    <div class="col-3">
+                        <hl-keyword-input [question]="question"
+                            (completed)="onCompleted()" />
                     </div>
                 </div>
-                <div class="col-6 text-center">
+            </div>
+        }
+        <div class="text-center">
+            <a [routerLink]="['/home']" class="btn btn-dark">
+                <fa-icon [icon]="faArrowDown" />
+                Terug
+            </a>
+        </div>
+    } @else {
+        @if (question) {
+            <div class="flex-grow-1 p-4">
+                <div class="w-100" style="height: 65vh">
                     <img [src]="question.target_work.image_url"
-                        style="max-height: 400px; max-width: 100%"
-                        class="border border-dark border-3" />
-                </div>
-                <div class="col-3">
-                    <hl-keyword-input [question]="question"
-                        (completed)="onCompleted()" />
+                        class="object-fit-contain w-100 h-100"
+                        />
                 </div>
             </div>
-        </div>
+            <div class="pt-4 text-center">
+                <button class="btn btn-dark" (click)="focus.set(false)">
+                    <fa-icon [icon]="faArrowDown" />
+                    Terug
+                </button>
+            </div>
+        }
     }
-    <div class="text-center">
-        <a [routerLink]="['/home']" class="btn btn-dark">
-            <fa-icon [icon]="faArrowDown" />
-            Terug
-        </a>
-    </div>
 </div>

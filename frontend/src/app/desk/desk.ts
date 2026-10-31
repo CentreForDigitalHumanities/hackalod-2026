@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,8 @@ export class Desk {
 
     levelState = inject(Levelstate);
     question$ = this.levelState.question$;
+
+    focus = signal<boolean>(false);
 
     onCompleted() {
         setTimeout(() => {
