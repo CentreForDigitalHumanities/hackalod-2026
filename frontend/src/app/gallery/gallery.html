@@ -6,7 +6,8 @@
     @if (question) {
         @if (focus(); as focused) {
             <div class="flex-grow-1 p-4">
-                <hl-artwork [work]="focused" />
+                <hl-artwork [work]="focused"
+                    style="height: 70vh; display: block;"/>
             </div>
             <div class="text-center py-3">
                 <button class="btn btn-dark" (click)="focus.set(null)">
@@ -22,11 +23,12 @@
                                 @let index = (cols.length * i) + j;
                                 @let work = getPicture(works, index);
                                 @if (work) {
-                                    <div class="picture-col p-2"
+                                    <div class="picture-col p-3"
                                         role="button" tabindex="1"
                                         (click)="focus.set(work)"
                                         (keydown.enter)="focus.set(work)">
-                                        <hl-artwork [work]="work" />
+                                        <hl-artwork [work]="work"
+                                            style="display: block; height: 25vh" />
                                     </div>
                                 }
                             }

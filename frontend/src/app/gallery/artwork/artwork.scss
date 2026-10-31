@@ -1,9 +1,13 @@
 .has-border-image {
     position: relative;
-    height: 200px;
+    height: 100%;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+.has-border-image.is-big {
+
 }
 
 .has-border-image > .artwork {
