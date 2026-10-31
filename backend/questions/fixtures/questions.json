@@ -3,7 +3,7 @@
         "model": "questions.work",
         "pk": 1,
         "fields": {
-            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/judith/judith.png"
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/judith/judith.jpg"
         }
     },
     {
@@ -34,7 +34,7 @@
         "model": "questions.work",
         "pk": 2,
         "fields": {
-            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/lazarus/lazarus.png"
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/lazarus/lazarus.jpg"
         }
     },
     {
@@ -55,7 +55,7 @@
         "model": "questions.work",
         "pk": 3,
         "fields": {
-            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/orfeus/orfeus.png"
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/orfeus/orfeus.jpg"
         }
     },
     {
