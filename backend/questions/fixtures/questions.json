@@ -50,5 +50,36 @@
                 "hond": ["hond", "hondje"]
             }
         }
+    },
+    {
+        "model": "questions.work",
+        "pk": 3,
+        "fields": {
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/orfeus/orfeus.png"
+        }
+    },
+    {
+        "model": "questions.describequestion",
+        "pk": 3,
+        "fields": {
+            "target_work": 1,
+            "ic_code": "94O511",
+            "label": "Orfeus & de dieren (question 1)",
+            "keywords": {
+                "olifant": ["olifant"],
+                "man": ["man"],
+                "eenhoorn": ["eenhoorn"]
+            }
+        }
+    },
+    {
+        "model": "questions.oneoutquestion",
+        "pk": 1,
+        "fields": {
+            "target_ic_code": "94O511",
+            "context_ic_code": "94O21",
+            "label": "Orfeus & de dieren (question 2)",
+            "hint": "???"
+        }
     }
 ]
