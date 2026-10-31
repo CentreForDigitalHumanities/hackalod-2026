@@ -5,12 +5,13 @@
             Welke hoort er niet bij?
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-9">
         @for (row of rows; track row) {
-            <div class="row">
+            <div class="row h-100">
                 @for (col of cols; track col) {
-                    <div class="col">
-                        test
+                    <div class="col p-2">
+                        <img src="/uu-cdh.svg"
+                            class="w-100 h-100 object-fit-contain">
                     </div>
                 }
             </div>
