@@ -6,7 +6,7 @@ from django.conf import settings
 import json
 import random
 
-DATA_LOC = op.join(settings.BASE_DIR, 'datasets', 'data', 'iconclass_ai_set')
+DATA_LOC = op.join(settings.DATA_ROOT, 'iconclass_ai_set')
 IMG_LOC = op.join(DATA_LOC, 'images')
 
 with open(op.join(DATA_LOC, 'sample.json')) as f:

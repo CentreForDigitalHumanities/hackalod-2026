@@ -1,5 +1,6 @@
 import os.path as op
 
+from django.conf import settings
 from django.urls import reverse
 import iconclass
 from django.http import FileResponse, Http404, JsonResponse
@@ -17,7 +18,7 @@ def iconclass_images(request, ic_code: str):
     n = int(request.GET.get('n', 4))
     images = iconclass_examples.get_images(ic_code, n=n)
     urls = [
-        reverse('iconclass-image-file', args=[op.basename(path)])
+        reverse('image-file', args=[op.relpath(path, settings.DATA_ROOT)])
         for path in images
     ]
     objects = [
@@ -27,8 +28,8 @@ def iconclass_images(request, ic_code: str):
     return JsonResponse(objects, safe=False)
 
 @require_GET
-def iconclass_image_file(request, filename: str):
-    return serve(request, filename, document_root=iconclass_examples.IMG_LOC)
+def image_file(request, path: str):
+    return serve(request, path, document_root=settings.DATA_ROOT)
 
 
 def rijks_id(request, rijks_id: str):
