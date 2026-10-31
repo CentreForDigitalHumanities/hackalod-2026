@@ -53,17 +53,22 @@ export class OneOutGame {
     magnifyMode = signal<boolean>(false);
 
     completed = output<void>();
+    focus = output<Art>();
 
     wrongGuesses = signal<number[]>([]);
 
-    onSelect(index: number) {
-        if (index == this.correct) {
-            setTimeout(() => {
-                alert('Correct!')
-                this.completed.emit();
-            });
+    onSelect(index: number, work: Art) {
+        if (this.magnifyMode()) {
+            this.focus.emit(work);
         } else {
-            this.wrongGuesses.update((value) => value.concat([index]));
+            if (index == this.correct) {
+                setTimeout(() => {
+                    alert('Correct!')
+                    this.completed.emit();
+                });
+            } else {
+                this.wrongGuesses.update((value) => value.concat([index]));
+            }
         }
     }
 }
