@@ -19,21 +19,8 @@ export class OneOutGame {
 
     private nCommonWorks = 3;
 
-    commonWorks$ = this.oneoutQuestion$.pipe(
-        switchMap((question) =>
-            this.levelState.api.getIconclassWorks(
-                question?.target_ic_code ?? '',
-                this.nCommonWorks,
-            ),
-        ),
-    );
-
-    oneoutWork$ = this.oneoutQuestion$.pipe(
-        switchMap((question) =>
-            this.levelState.api.getIconclassWorks(question?.context_ic_code ?? '', 1),
-        ),
-        map((works) => works[0]),
-    );
+    commonWorks$ = this.levelState.oneOutCommonWorks$;
+    oneoutWork$ = this.levelState.oneOutWork$;
 
     rows = [0, 1];
     cols = [0, 1];
@@ -41,7 +28,11 @@ export class OneOutGame {
     // random index between 0 and nCommonWorks (inclusive)
     correct = Math.floor(Math.random() * (this.nCommonWorks + 1));
 
-    getWork(index: number, commonWorks: Art[], oneoutWork: Art | null | undefined): Art | null | undefined {
+    getWork(
+        index: number,
+        commonWorks: Art[],
+        oneoutWork: Art | null | undefined,
+    ): Art | null | undefined {
         if (index === this.correct) {
             return oneoutWork;
         }
@@ -63,7 +54,7 @@ export class OneOutGame {
         } else {
             if (index == this.correct) {
                 setTimeout(() => {
-                    alert('Correct!')
+                    alert('Correct!');
                     this.completed.emit();
                 });
             } else {

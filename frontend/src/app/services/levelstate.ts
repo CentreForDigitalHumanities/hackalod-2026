@@ -26,6 +26,15 @@ export class Levelstate {
         shareReplay(1),
     );
 
+    oneOutWork$ = this.oneoutQuestion$.pipe(
+        switchMap((question) => this.api.getIconclassWorks(question?.context_ic_code ?? '', 1)),
+        map((works) => works[0]),
+    );
+
+    oneOutCommonWorks$ = this.oneoutQuestion$.pipe(
+        switchMap((question) => this.api.getIconclassWorks(question?.target_ic_code ?? '', 3)),
+    );
+
     works$ = this.describeQuestion$.pipe(
         switchMap((question) => (question ? this.api.getIconclassWorks(question.ic_code) : of([]))),
         shareReplay(1),
