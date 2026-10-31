@@ -12,17 +12,17 @@
             </button>
         </div>
     </div>
-    <div class="col-9">
+    <div class="col-9 h-100">
         @let wrong = wrongGuesses();
         @let commonWorks = (commonWorks$ | async) ?? [];
         @let oneoutWork = oneoutWork$ | async;
         @for (row of rows; track row) {
-            <div class="row h-100">
+            <div class="w-50 h-150 d-inline-block">
                 @for (col of cols; track col) {
                     @let index = (cols.length * row) + col;
                     @let work = getWork(index, commonWorks, oneoutWork);
                     @if (work) {
-                        <div class="col p-2">
+                        <div class="p-2">
                             <img [src]="work?.url"
                                 class="w-100 object-fit-contain"
                                 style="height: 25vh; cursor: pointer;"
