@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,11 +18,15 @@ export class OneOutGame {
 
     magnifyMode = signal<boolean>(false);
 
+    completed = output<void>();
+
+    wrongGuesses = signal<number[]>([]);
+
     onSelect(index: number) {
         if (index == this.correct) {
-            console.log('yay!')
+            this.completed.emit();
         } else {
-            console.log('nay!');
+            this.wrongGuesses.update((value) => value.concat([index]));
         }
     }
 }
