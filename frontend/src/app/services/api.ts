@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Art, DescribeQuestion, OneOutQuestion } from '../models/question';
+import { Art, Casus, DescribeQuestion, OneOutQuestion } from '../models/question';
 
 @Injectable({
     providedIn: 'root',
@@ -15,6 +15,10 @@ export class Api {
 
     getOneOutQuestions(): Observable<OneOutQuestion[]> {
         return this.http.get<OneOutQuestion[]>('/api/one-out-questions/');
+    }
+
+    getCasussen(): Observable<Casus[]> {
+        return this.http.get<Casus[]>('/api/casussen/');
     }
 
     getIconclassWorks(icCode: string, n?: number): Observable<Art[]> {

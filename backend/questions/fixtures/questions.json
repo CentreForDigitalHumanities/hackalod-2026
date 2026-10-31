@@ -52,6 +52,16 @@
         }
     },
     {
+        "model": "questions.oneoutquestion",
+        "pk": 2,
+        "fields": {
+            "target_ic_code": "73D94",
+            "context_ic_code": "41B1",
+            "label": "Lazarus (question 2)",
+            "hint": "???"
+        }
+    },
+    {
         "model": "questions.work",
         "pk": 3,
         "fields": {
@@ -74,12 +84,78 @@
     },
     {
         "model": "questions.oneoutquestion",
-        "pk": 2,
+        "pk": 3,
         "fields": {
             "target_ic_code": "94O511",
             "context_ic_code": "94O21",
             "label": "Orfeus & de dieren (question 2)",
             "hint": "???"
+        }
+    },
+    {
+        "model": "questions.work",
+        "pk": 4,
+        "fields": {
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/familieportret/familieportret.jpg"
+        }
+    },
+    {
+        "model": "questions.describequestion",
+        "pk": 4,
+        "fields": {
+            "target_work": 4,
+            "ic_code": "42G",
+            "label": "Familieportret (question 1)",
+            "keywords": {
+                "ouders": ["ouders"],
+                "kinderen": ["kinderen"]
+            }
+        }
+    },
+    {
+        "model": "questions.oneoutquestion",
+        "pk": 4,
+        "fields": {
+            "target_ic_code": "48C75",
+            "context_ic_code": "73B81",
+            "label": "Familieportret (question 2)",
+            "hint": "???"
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 1,
+        "fields": {
+            "label": "Judith & Holofernes",
+            "question1": 1,
+            "question2": 1
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 2,
+        "fields": {
+            "label": "Lazarus",
+            "question1": 2,
+            "question2": 2
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 3,
+        "fields": {
+            "label": "Orfeus & de dieren",
+            "question1": 3,
+            "question2": 3
+        }
+    },
+    {
+        "model": "questions.casus",
+        "pk": 4,
+        "fields": {
+            "label": "Familieportret",
+            "question1": 4,
+            "question2": 4
         }
     }
 ]

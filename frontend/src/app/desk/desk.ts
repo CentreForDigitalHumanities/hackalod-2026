@@ -27,7 +27,7 @@ export class Desk {
     faArrowDown = faArrowDown;
 
     levelState = inject(Levelstate);
-    question$ = this.levelState.question$;
+    question$ = this.levelState.describeQuestion$;
     stage$ = this.levelState.stage$;
 
     focus = signal<TargetArt | null>(null);
