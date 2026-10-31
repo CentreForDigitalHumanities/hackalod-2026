@@ -4,9 +4,18 @@
         ngbTooltip="Terug naar bureau">
         <fa-icon [icon]="faArrowLeft" />
     </a>
-    @if(books) {
-        @for (book of books; track book.id) {
-            <button class="btn" (click)="showBook(book)">Boek {{ book.id }}</button>
+    <div>
+        @if(books) {
+            @for (book of books; track book.id; let i = $index) {
+                <img [src]="getBookImage(i)" style="width: 20%" (click)="openBook(book)">
+            }
         }
+    </div>
+    @if(showBook) {
+        <div>
+            <div [innerHTML]="bookHtml">
+            </div>
+            <button class="btn btn-primary" (click)="closeBook()">Boek sluiten</button>
+        </div>
     }
 </div>

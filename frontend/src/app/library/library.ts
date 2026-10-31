@@ -17,8 +17,20 @@ export class Library {
     levelState = inject(Levelstate);
     books$ = this.levelState.libraryBooks$;
     faArrowLeft = faArrowLeft;
+    bookHtml: string = "";
+    showBook: boolean = false;
 
-    showBook(book: LibraryBook) {
-        alert(book.html);
+    openBook(book: LibraryBook) {
+        this.bookHtml = book.html;
+        this.showBook = true;
+    }
+
+    closeBook() {
+        this.bookHtml = "";
+        this.showBook = false;
+    }
+
+    getBookImage(i: number) {
+        return `/books/boek${i+1}.png`;
     }
 }
