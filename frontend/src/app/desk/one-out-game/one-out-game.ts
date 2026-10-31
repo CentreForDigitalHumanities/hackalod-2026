@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'hl-one-out-game',
-    imports: [],
+    imports: [FontAwesomeModule],
     templateUrl: './one-out-game.html',
     styleUrl: './one-out-game.scss',
 })
@@ -11,6 +13,10 @@ export class OneOutGame {
     cols = [0, 1];
 
     correct = 2;
+
+    faMagnifyingGlass = faMagnifyingGlass;
+
+    magnifyMode = signal<boolean>(false);
 
     onSelect(index: number) {
         if (index == this.correct) {
