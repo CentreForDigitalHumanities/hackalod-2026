@@ -21,7 +21,8 @@
                             (focus)="focus.set($event)" />
                     }
                     @case (2) {
-                        <hl-one-out-game />
+                        <hl-one-out-game
+                            (focus)="focus.set($event)" />
                     }
 
                 }
@@ -56,9 +57,12 @@
         @if (question) {
             <div class="flex-grow-1 p-4">
                 <div class="w-100" style="height: 65vh">
-                    <img [src]="question.target_work.image_url"
-                        class="object-fit-contain w-100 h-100"
-                        />
+                    @let focused = focus();
+                    @if (focused) {
+                        <img [src]="getURL(focused)"
+                            class="object-fit-contain w-100 h-100"
+                            />
+                    }
                 </div>
             </div>
             <div class="pt-4 text-center">

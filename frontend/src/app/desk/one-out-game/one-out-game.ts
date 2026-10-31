@@ -1,12 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component, output, signal, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Levelstate } from '../../services/levelstate';
 import { map, switchMap } from 'rxjs';
 import { Art } from '../../models/question';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'hl-one-out-game',
-    imports: [AsyncPipe],
+    imports: [AsyncPipe, FontAwesomeModule],
     templateUrl: './one-out-game.html',
     styleUrl: './one-out-game.scss',
 })
@@ -46,11 +48,27 @@ export class OneOutGame {
         return commonWorks[index < this.correct ? index : index - 1];
     }
 
-    onSelect(index: number) {
-        if (index == this.correct) {
-            console.log('yay!');
+    faMagnifyingGlass = faMagnifyingGlass;
+
+    magnifyMode = signal<boolean>(false);
+
+    completed = output<void>();
+    focus = output<Art>();
+
+    wrongGuesses = signal<number[]>([]);
+
+    onSelect(index: number, work: Art) {
+        if (this.magnifyMode()) {
+            this.focus.emit(work);
         } else {
-            console.log('nay!');
+            if (index == this.correct) {
+                setTimeout(() => {
+                    alert('Correct!')
+                    this.completed.emit();
+                });
+            } else {
+                this.wrongGuesses.update((value) => value.concat([index]));
+            }
         }
     }
 }
