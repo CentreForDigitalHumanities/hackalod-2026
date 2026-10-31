@@ -18,7 +18,8 @@
                 @switch (stage$ | async) {
                     @case (1) {
                         <hl-describe-game [question]="question"
-                            (focus)="focus.set($event)" />
+                            (focus)="focus.set($event)"
+                            (completed)="onSuccess(successModal, 1)"/>
                     }
                     @case (2) {
                         <hl-one-out-game
@@ -74,3 +75,20 @@
         }
     }
 </div>
+
+<ng-template #successModal let-modal>
+    <div class="modal-body">
+        Correct!
+    </div>
+    <div class="modal-footer">
+        @let stage = stage$ | async;
+        @switch (stage) {
+            @case (1) {
+                <button class="btn btn-success"
+                    (click)="setStage(2); modal.close()">
+                    Volgend onderdeel
+                </button>
+            }
+        }
+    </div>
+</ng-template>

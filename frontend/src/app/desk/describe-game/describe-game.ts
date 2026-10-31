@@ -19,12 +19,13 @@ export class DescribeGame {
     magnifyMode = signal<boolean>(false);
     focus = output<TargetArt>();
 
+    completed = output<void>();
+
     faMagnifyingGlass = faMagnifyingGlass;
 
     onCompleted() {
         setTimeout(() => {
-            alert('Yay!');
-            this.levelState.nextStage();
+            this.completed.emit();
         }, 500);
     }
 }

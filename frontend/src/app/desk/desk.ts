@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, TemplateRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { DescribeGame } from './describe-game/describe-game';
 import { Art, TargetArt } from '../models/question';
 import { OneOutGame } from './one-out-game/one-out-game';
-import { NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'hl-desk',
@@ -16,7 +16,7 @@ import { NgbDropdown, NgbDropdownButtonItem, NgbDropdownItem, NgbDropdownMenu, N
     OneOutGame,
     NgbDropdown, NgbDropdownToggle, NgbDropdownButtonItem, NgbDropdownItem,
     NgbDropdownMenu,
-    NgbDropdownToggle
+    NgbDropdownToggle,
 ],
     templateUrl: './desk.html',
     styleUrl: './desk.scss',
@@ -25,6 +25,7 @@ export class Desk {
     faArrowLeft = faArrowLeft;
     faArrowRight = faArrowRight;
     faArrowDown = faArrowDown;
+    modalService = inject(NgbModal);
 
     levelState = inject(Levelstate);
     question$ = this.levelState.describeQuestion$;
@@ -36,6 +37,10 @@ export class Desk {
         'Beschrijven',
         'Vergelijken',
     ];
+
+    onSuccess(modalContent: TemplateRef<any>, stage: number) {
+        this.modalService.open(modalContent);
+    }
 
     setStage(value: number) {
         this.stage$.next(value);
