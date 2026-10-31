@@ -98,4 +98,4 @@ STATICFILES_DIRS = []
 DATA_ROOT = os.path.join(BASE_DIR, 'datasets', 'data')
 
 EUROPEANA_API_KEY = os.environ.get('EUROPEANA_API_KEY')
-PROXY_FRONTEND = True
+PROXY_FRONTEND = 'http://localhost:4200/'

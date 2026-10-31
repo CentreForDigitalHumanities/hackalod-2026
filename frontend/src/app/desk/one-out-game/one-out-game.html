@@ -1,24 +1,41 @@
 <div class="row mt-4 align-items-center h-100">
     <div class="col-3">
-        <div class="bg-dark rounded p-4">
-            Vergelijk je observaties met andere schilderijen.
-            Welke hoort er niet bij?
+        <div class="vstack gap-2">
+            <div class="bg-dark rounded p-4">
+                Vergelijk je observaties met andere schilderijen.
+                Welke hoort er niet bij?
+            </div>
+            <button class="btn btn-dark"
+                [class.active]="magnifyMode()"
+                (click)="magnifyMode.update(mode => !mode)">
+                <fa-icon [icon]="faMagnifyingGlass" />
+            </button>
+            <button class="btn btn-dark" (click)="refreshWorks()">
+
+                <fa-icon [icon]="faRefresh" />
+                Geef me een nieuwe set afbeeldingen
+            </button>
         </div>
     </div>
-    <div class="col-9">
+    <div class="col-9 h-100">
+        @let wrong = wrongGuesses();
         @let commonWorks = (commonWorks$ | async) ?? [];
         @let oneoutWork = oneoutWork$ | async;
         @for (row of rows; track row) {
-            <div class="row h-100">
+            <div class="w-50 h-50 d-inline-block">
                 @for (col of cols; track col) {
                     @let index = (cols.length * row) + col;
                     @let work = getWork(index, commonWorks, oneoutWork);
-                    <div class="col p-2">
-                        <img [src]="work?.url ?? '/uu-cdh.svg'"
-                            class="w-100 h-100 object-fit-contain"
-                            style="cursor: pointer;"
-                            (click)="onSelect(index)">
-                    </div>
+                    @if (work) {
+                        <div class="p-2">
+                            <img [src]="work?.url"
+                                class="w-100 object-fit-contain"
+                                style="height: 25vh; cursor: pointer;"
+                                [class.wrong-guess]="wrong.includes(index)"
+                                [class.correct-guess]="index === correct && isComplete()"
+                                (click)="onSelect(index, work)">
+                        </div>
+                    }
                 }
             </div>
         }

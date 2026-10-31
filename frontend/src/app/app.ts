@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Menu } from './menu/menu';
-import { ToastContainer } from './toast-container/toast-container';
 
 
 @Component({
@@ -10,7 +9,6 @@ import { ToastContainer } from './toast-container/toast-container';
     imports: [
         RouterOutlet,
         Menu,
-        ToastContainer
     ],
     templateUrl: './app.html',
     styleUrl: './app.scss'

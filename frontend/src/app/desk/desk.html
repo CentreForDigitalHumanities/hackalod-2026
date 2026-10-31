@@ -18,10 +18,13 @@
                 @switch (stage$ | async) {
                     @case (1) {
                         <hl-describe-game [question]="question"
-                            (focus)="focus.set($event)" />
+                            (focus)="focus.set($event)"
+                            (completed)="onSuccess(successModal, 1)"/>
                     }
                     @case (2) {
-                        <hl-one-out-game />
+                        <hl-one-out-game
+                            (completed)="onSuccess(successModal, 2)"
+                            (focus)="focus.set($event)" />
                     }
 
                 }
@@ -56,9 +59,12 @@
         @if (question) {
             <div class="flex-grow-1 p-4">
                 <div class="w-100" style="height: 65vh">
-                    <img [src]="question.target_work.image_url"
-                        class="object-fit-contain w-100 h-100"
-                        />
+                    @let focused = focus();
+                    @if (focused) {
+                        <img [src]="getURL(focused)"
+                            class="object-fit-contain w-100 h-100"
+                            />
+                    }
                 </div>
             </div>
             <div class="pt-4 text-center">
@@ -70,3 +76,31 @@
         }
     }
 </div>
+
+<ng-template #successModal let-modal>
+    <div class="modal-body">
+        Correct!
+    </div>
+    <div class="modal-footer">
+        @let stage = stage$ | async;
+        @switch (stage) {
+            @case (1) {
+                <button class="btn btn-success"
+                    (click)="setStage(2); modal.close()">
+                    Volgend onderdeel
+                </button>
+            }
+            @case (2) {
+                <a class="btn btn-success"
+                    (click)="modal.close()"
+                    [routerLink]="['/home']">
+                    Sluit casus
+            </a>
+            }
+        }
+        <button class="btn btn-secondary"
+            (click)="modal.dismiss()">
+            Blijf hier
+        </button>
+    </div>
+</ng-template>
