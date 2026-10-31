@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, of, shareReplay, startWith, Subject, switchMap, tap } from 'rxjs';
 import { Api } from './api';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class Levelstate {
     casus$ = combineLatest([this.allCasussen$, toObservable(this.level)]).pipe(
         map(([cassusen, id]) => cassusen.find((q) => q.id === id)),
         shareReplay(1),
+        tap(() => this.stage$.next(1)),
     );
 
     describeQuestion$ = this.casus$.pipe(
