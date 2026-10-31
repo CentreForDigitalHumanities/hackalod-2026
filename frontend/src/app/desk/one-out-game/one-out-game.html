@@ -22,8 +22,8 @@
                     @let work = getWork(index, commonWorks, oneoutWork);
                     <div class="col p-2">
                         <img [src]="work?.url"
-                            class="w-100 h-100 object-fit-contain"
-                            style="cursor: pointer;"
+                            class="w-100 object-fit-contain"
+                            style="height: 250px; cursor: pointer;"
                             [class.wrong-guess]="wrong.includes(index)"
                             (click)="onSelect(index)">
                     </div>
