@@ -1,8 +1,9 @@
 import { Component, computed, input, output, } from '@angular/core';
 import { DescribeQuestion } from '../../models/question';
-import { combineLatest, delay, filter, map, of, scan, startWith, Subject, switchMap, withLatestFrom } from 'rxjs';
+import { combineLatest, delay, filter, of, scan, startWith, Subject, switchMap, withLatestFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
+import * as _ from 'underscore';
 
 @Component({
     selector: 'hl-keyword-input',
@@ -27,7 +28,7 @@ export class KeywordInput {
     );
 
     keywordsGuessed$ = this.guessed$.pipe(
-        scan((acc, curr) => [...acc, curr], [] as string[]),
+        scan((acc, curr) => _.uniq([...acc, curr]), [] as string[]),
         startWith([]),
     );
 
@@ -66,6 +67,7 @@ export class KeywordInput {
                     if (this.matchesKeyword(value, option)) {
                         this.guessed$.next(keyword);
                         setTimeout(() => element.value = '', 500);
+                        break;
                     }
                 }
             }
