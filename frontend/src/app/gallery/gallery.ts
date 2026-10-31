@@ -19,7 +19,7 @@ import { Art } from '../models/question';
 })
 export class Gallery {
     levelState = inject(Levelstate);
-    question$ = this.levelState.question$;
+    question$ = this.levelState.describeQuestion$;
     works$ = this.levelState.works$;
 
     focus = signal<Art | null>(null);

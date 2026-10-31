@@ -8,21 +8,21 @@ import { Api } from './api';
 })
 export class Levelstate {
     api = inject(Api);
-    allQuestions$ = this.api.getDescribeQuestions().pipe(
+    allCasussen$ = this.api.getCasussen().pipe(shareReplay(1));
+
+    level = signal<number>(1);
+    casus$ = combineLatest([this.allCasussen$, toObservable(this.level)]).pipe(
+        map(([cassusen, id]) => cassusen.find((q) => q.id === id)),
         shareReplay(1),
     );
 
-    level = signal<number>(1);
-    question$ = combineLatest([
-        this.allQuestions$,
-        toObservable(this.level),
-    ])
-    .pipe(
-        map(([questions, id]) => questions.find(q => q.id === id)),
+    describeQuestion$ = this.casus$.pipe(
+        map((casus) => casus?.question1),
         shareReplay(1),
     );
-    works$ = this.question$.pipe(
-        switchMap(question => question ? this.api.getIconclassWorks(question.ic_code) : of([])),
+
+    works$ = this.describeQuestion$.pipe(
+        switchMap((question) => (question ? this.api.getIconclassWorks(question.ic_code) : of([]))),
         shareReplay(1),
     );
     stage$ = new BehaviorSubject<number>(1);

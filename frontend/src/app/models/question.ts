@@ -28,6 +28,7 @@ export type OneOutQuestion = {
 };
 
 export type Casus = {
+    id: number;
     label: string;
     question1: DescribeQuestion;
     question2: OneOutQuestion;
