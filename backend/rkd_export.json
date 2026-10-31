@@ -233,14 +233,6 @@
             "is_painting": false
         },
         {
-            "source": "https://data.rkd.nl/images/341338",
-            "title": "The parable of Dives and poor Lazarus",
-            "date_start": "1460",
-            "date_end": "1470",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
             "source": "https://data.rkd.nl/images/62609",
             "title": "The parable of the rich man and poor Lazarus",
             "date_start": "1607",
@@ -281,14 +273,6 @@
             "is_painting": true
         },
         {
-            "source": "https://data.rkd.nl/images/326641",
-            "title": "Death of Lazarus",
-            "date_start": "1490",
-            "date_end": "1500",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
             "source": "https://data.rkd.nl/images/108569",
             "title": "The parable of the rich man and poor Lazarus",
             "date_start": "1565",
@@ -319,14 +303,6 @@
             "date_end": "1667",
             "image_url": "https://media.rkd.nl/iiif/2/9237950/full/!1500,1500/0/default.jpg",
             "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/326642",
-            "title": "Lazarus sitting at Abraham's bosom and Dives in hell",
-            "date_start": "1490",
-            "date_end": "1500",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
         },
         {
             "source": "https://data.rkd.nl/images/3593",
@@ -425,14 +401,6 @@
             "is_painting": true
         },
         {
-            "source": "https://data.rkd.nl/images/326640",
-            "title": "The parable of Dives and poor Lazarus; Death of Lazarus",
-            "date_start": "1490",
-            "date_end": "1500",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
             "source": "https://data.rkd.nl/images/231115",
             "title": "Lazarus at the door of the rich man",
             "date_start": "1595",
@@ -507,27 +475,11 @@
             "is_painting": true
         },
         {
-            "source": "https://data.rkd.nl/images/326983",
-            "title": "The Harrowing of Hell",
-            "date_start": "1275",
-            "date_end": "1280",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
             "source": "https://data.rkd.nl/images/334029",
             "title": "Harrowing of Hell: Christ leaves hell and liberates the souls",
             "date_start": "1470",
             "date_end": "1490",
             "image_url": "https://media.rkd.nl/iiif/2/10911209/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
-            "source": "https://data.rkd.nl/images/338783",
-            "title": "The Harrowing of Hell",
-            "date_start": "1470",
-            "date_end": "1490",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
             "is_painting": false
         },
         {
@@ -593,14 +545,6 @@
             "date_end": "1642",
             "image_url": "https://media.rkd.nl/iiif/2/9216546/full/!1500,1500/0/default.jpg",
             "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/322234",
-            "title": "Harrowing of Hell: Christ leaving hell, while liberating Adam and stepping on a devil (2nd of 2)",
-            "date_start": "1190",
-            "date_end": "1200",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
         },
         {
             "source": "https://data.rkd.nl/images/330989",
@@ -1119,22 +1063,6 @@
     ],
     "94O21": [
         {
-            "source": "https://data.rkd.nl/images/348090",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348064",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1800",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
             "source": "https://data.rkd.nl/images/348085",
             "title": "Orpheus and Eurydice setting out from Hades",
             "date_start": "1600",
@@ -1151,51 +1079,11 @@
             "is_painting": false
         },
         {
-            "source": "https://data.rkd.nl/images/348084",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348055",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1797",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
-            "source": "https://data.rkd.nl/images/348080",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1750",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
             "source": "https://data.rkd.nl/images/348053",
             "title": "Orpheus and Eurydice setting out from Hades",
             "date_start": "1600",
             "date_end": "1646",
             "image_url": "https://media.rkd.nl/iiif/2/11204542/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348087",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348062",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1750",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
             "is_painting": true
         },
         {
@@ -1215,28 +1103,12 @@
             "is_painting": false
         },
         {
-            "source": "https://data.rkd.nl/images/348086",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
             "source": "https://data.rkd.nl/images/33451",
             "title": "Orpheus and Eurydice (Metamorphoses 10:11-63)",
             "date_start": "1677",
             "date_end": "1747",
             "image_url": "https://media.rkd.nl/iiif/2/9504801/full/!1500,1500/0/default.jpg",
             "is_painting": false
-        },
-        {
-            "source": "https://data.rkd.nl/images/348082",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
         },
         {
             "source": "https://data.rkd.nl/images/348089",
@@ -1255,59 +1127,11 @@
             "is_painting": true
         },
         {
-            "source": "https://data.rkd.nl/images/348081",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348083",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1799",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348054",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1797",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
-            "source": "https://data.rkd.nl/images/348063",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1800",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
             "source": "https://data.rkd.nl/images/348088",
             "title": "Orpheus and Eurydice setting out from Hades",
             "date_start": "1600",
             "date_end": "1799",
             "image_url": "https://media.rkd.nl/iiif/2/11204543/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348056",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1750",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/348059",
-            "title": "Orpheus and Eurydice setting out from Hades",
-            "date_start": "1600",
-            "date_end": "1750",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
             "is_painting": true
         },
         {
@@ -1328,14 +1152,6 @@
         }
     ],
     "71U42731": [
-        {
-            "source": "https://data.rkd.nl/images/219644",
-            "title": "Judith with the head of Holophernes",
-            "date_start": "1540",
-            "date_end": "1559",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
         {
             "source": "https://data.rkd.nl/images/219930",
             "title": "Judith with the head of Holofernes (Judith 8-16)",
@@ -1550,14 +1366,6 @@
             "date_start": "1643",
             "date_end": "1671",
             "image_url": "https://media.rkd.nl/iiif/2/10321993/full/!1500,1500/0/default.jpg",
-            "is_painting": false
-        },
-        {
-            "source": "https://data.rkd.nl/images/324282",
-            "title": "Judith with the head of Holofernes",
-            "date_start": "1500",
-            "date_end": "1510",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
             "is_painting": false
         },
         {
@@ -1827,14 +1635,6 @@
             "is_painting": true
         },
         {
-            "source": "https://data.rkd.nl/images/322954",
-            "title": "King holding tree of consanguinity",
-            "date_start": "1200",
-            "date_end": "1250",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
             "source": "https://data.rkd.nl/images/1896",
             "title": "Portrait of Johanna de Geer (1629-1691) with her children Cecilia Trip (1660-1728) and Laurens Trip (1662-?), represented as Caritas",
             "date_start": "1662",
@@ -1864,14 +1664,6 @@
             "date_start": "1825",
             "date_end": "1873",
             "image_url": "https://media.rkd.nl/iiif/2/10657703/full/!1500,1500/0/default.jpg",
-            "is_painting": true
-        },
-        {
-            "source": "https://data.rkd.nl/images/322955",
-            "title": "Tree of consanguinity",
-            "date_start": "1200",
-            "date_end": "1250",
-            "image_url": "https://media.rkd.nl/iiif/2/10783267/full/!1500,1500/0/default.jpg",
             "is_painting": true
         },
         {
@@ -2690,6 +2482,254 @@
             "date_start": "1868",
             "date_end": "1868",
             "image_url": "https://media.rkd.nl/iiif/2/10647598/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/199001",
+            "title": "Boy playing the flute",
+            "date_start": "1635",
+            "date_end": "1635",
+            "image_url": "https://media.rkd.nl/iiif/2/9230153/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/258296",
+            "title": "Musical company",
+            "date_start": "1632",
+            "date_end": "1681",
+            "image_url": "https://media.rkd.nl/iiif/2/9165124/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/55011",
+            "title": "Inn interior with peasants singing and making music",
+            "date_start": "1646",
+            "date_end": "1664",
+            "image_url": "https://media.rkd.nl/iiif/2/9371495/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/204499",
+            "title": "A monkey playing a transverse flute",
+            "date_start": "1862",
+            "date_end": "1862",
+            "image_url": "https://media.rkd.nl/iiif/2/9205385/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/208321",
+            "title": "Young woman at the virginal",
+            "date_start": "1664",
+            "date_end": "1666",
+            "image_url": "https://media.rkd.nl/iiif/2/9230052/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/238551",
+            "title": "The adoration of Christ by the Holy Family, an angel and a female donor",
+            "date_start": "1470",
+            "date_end": "1490",
+            "image_url": "https://media.rkd.nl/iiif/2/9317279/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/257766",
+            "title": "Five young women playing musical instruments",
+            "date_start": "1535",
+            "date_end": "1570",
+            "image_url": "https://media.rkd.nl/iiif/2/10322138/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/237811",
+            "title": "Music making company in an interior",
+            "date_start": "1728",
+            "date_end": "1760",
+            "image_url": "https://media.rkd.nl/iiif/2/9161017/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/1617",
+            "title": "Amor docet musicam",
+            "date_start": "1688",
+            "date_end": "1690",
+            "image_url": "https://media.rkd.nl/iiif/2/9116223/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/193616",
+            "title": "Young woman with lute",
+            "date_start": "1650",
+            "date_end": "1699",
+            "image_url": "https://media.rkd.nl/iiif/2/9195025/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/206699",
+            "title": "Young woman seated at a table and young woman playing the virginal",
+            "date_start": "1770",
+            "date_end": "1772",
+            "image_url": "https://media.rkd.nl/iiif/2/9222281/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/196020",
+            "title": "Three children on a terrace: a boy playing on a cittern and a girl singing",
+            "date_start": "1655",
+            "date_end": "1719",
+            "image_url": "https://media.rkd.nl/iiif/2/9166353/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/7710",
+            "title": "As the singing leads, so the dancing follows",
+            "date_start": "1660",
+            "date_end": "1667",
+            "image_url": "https://media.rkd.nl/iiif/2/9107632/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/8179",
+            "title": "Merry family : Allegory on the bad example given by the elders to the young",
+            "date_start": "1638",
+            "date_end": "1647",
+            "image_url": "https://media.rkd.nl/iiif/2/9129507/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/3512",
+            "title": "Musical company in a Renaissance room",
+            "date_start": "1636",
+            "date_end": "1636",
+            "image_url": "https://media.rkd.nl/iiif/2/9217554/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/3929",
+            "title": "An elegant company at a banquet",
+            "date_start": "1557",
+            "date_end": "1603",
+            "image_url": "https://media.rkd.nl/iiif/2/10014284/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/249848",
+            "title": "Three Italian musicians",
+            "date_start": "1852",
+            "date_end": "1852",
+            "image_url": "https://media.rkd.nl/iiif/2/10789102/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/258301",
+            "title": "Musical company",
+            "date_start": "1632",
+            "date_end": "1681",
+            "image_url": "https://media.rkd.nl/iiif/2/9165125/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/286065",
+            "title": "Angels making music",
+            "date_start": "1660",
+            "date_end": "1669",
+            "image_url": "https://media.rkd.nl/iiif/2/10682907/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/239554",
+            "title": "Family portrait of Johannes Reyniers (1625-1681) en Elisabeth Roodhuysen (1633-1680) with their seven children",
+            "date_start": "1671",
+            "date_end": "1671",
+            "image_url": "https://media.rkd.nl/iiif/2/10636743/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/102227",
+            "title": "Young man with lute",
+            "date_start": "1740",
+            "date_end": "1760",
+            "image_url": "https://media.rkd.nl/iiif/2/9903281/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/300666",
+            "title": "As the old sing, so twitter the young",
+            "date_start": "1640",
+            "date_end": "1679",
+            "image_url": "https://media.rkd.nl/iiif/2/10711693/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/246115",
+            "title": "Musical company",
+            "date_start": "1674",
+            "date_end": "1676",
+            "image_url": "https://media.rkd.nl/iiif/2/10642050/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/198588",
+            "title": "Putto playing a cello",
+            "date_start": "1875",
+            "date_end": "1899",
+            "image_url": "https://media.rkd.nl/iiif/2/9927022/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/199796",
+            "title": "Children playing music in an interior",
+            "date_start": "1630",
+            "date_end": "1635",
+            "image_url": "https://media.rkd.nl/iiif/2/9199022/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/51664",
+            "title": "Musical company in an interior",
+            "date_start": "1630",
+            "date_end": "1699",
+            "image_url": "https://media.rkd.nl/iiif/2/9813642/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/69770",
+            "title": "Man playing the transverse flute",
+            "date_start": "1697",
+            "date_end": "1759",
+            "image_url": "https://media.rkd.nl/iiif/2/9120739/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/235020",
+            "title": "Young woman",
+            "date_start": "1912",
+            "date_end": "1962-02-27",
+            "image_url": "https://media.rkd.nl/iiif/2/9309030/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/238345",
+            "title": "Couple making music in an inn",
+            "date_start": "1700",
+            "date_end": "1749",
+            "image_url": "https://media.rkd.nl/iiif/2/9320151/full/!1500,1500/0/default.jpg",
+            "is_painting": false
+        },
+        {
+            "source": "https://data.rkd.nl/images/242047",
+            "title": "Portrait of an unknown family in an interior",
+            "date_start": "1633",
+            "date_end": "1684",
+            "image_url": "https://media.rkd.nl/iiif/2/9317207/full/!1500,1500/0/default.jpg",
+            "is_painting": true
+        },
+        {
+            "source": "https://data.rkd.nl/images/278539",
+            "title": "Allegory on the bad example given by the elders to the young",
+            "date_start": "1607",
+            "date_end": "1678",
+            "image_url": "https://media.rkd.nl/iiif/2/10672861/full/!1500,1500/0/default.jpg",
             "is_painting": true
         }
     ],

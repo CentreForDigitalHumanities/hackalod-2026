@@ -26,3 +26,10 @@ export type OneOutQuestion = {
     context_ic_code: string;
     hint: string;
 };
+
+export type Casus = {
+    label: string;
+    question1: DescribeQuestion;
+    question2: OneOutQuestion;
+    // question3: ??
+};
