@@ -10,6 +10,11 @@
                 (click)="magnifyMode.update(mode => !mode)">
                 <fa-icon [icon]="faMagnifyingGlass" />
             </button>
+            <button class="btn btn-dark" (click)="refreshWorks()">
+            
+                <fa-icon [icon]="faRefresh" />
+                Geef me een nieuwe set afbeeldingen
+            </button>
         </div>
     </div>
     <div class="col-9">

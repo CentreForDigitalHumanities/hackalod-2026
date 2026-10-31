@@ -4,7 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Levelstate } from '../../services/levelstate';
 import { map, switchMap } from 'rxjs';
 import { Art } from '../../models/question';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faRefresh } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'hl-one-out-game',
@@ -40,6 +40,7 @@ export class OneOutGame {
     }
 
     faMagnifyingGlass = faMagnifyingGlass;
+    faRefresh = faRefresh;
 
     magnifyMode = signal<boolean>(false);
 
@@ -61,5 +62,9 @@ export class OneOutGame {
                 this.wrongGuesses.update((value) => value.concat([index]));
             }
         }
+    }
+
+    refreshWorks() {
+        this.levelState.refreshOneOutWorks();
     }
 }
