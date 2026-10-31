@@ -8,6 +8,8 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.views.static import serve
 
+from questions.models import Work
+
 from . import iconclass_examples
 
 from rijksmuseum import rijks
@@ -16,16 +18,13 @@ from rijksmuseum import rijks
 @require_GET
 def iconclass_images(request, ic_code: str):
     n = int(request.GET.get('n', 4))
-    images = iconclass_examples.get_images(ic_code, n=n)
-    urls = [
-        reverse('image-file', args=[op.relpath(path, settings.DATA_ROOT)])
-        for path in images
-    ]
+    works = Work.objects.filter(ic_code=ic_code)[:n]
     objects = [
-        {'url': request.build_absolute_uri(url)}
-        for url in urls
+        {'url': work.image_url}
+        for work in works
     ]
     return JsonResponse(objects, safe=False)
+
 
 @require_GET
 def image_file(request, path: str):

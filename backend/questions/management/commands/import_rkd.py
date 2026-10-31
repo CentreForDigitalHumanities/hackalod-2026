@@ -23,6 +23,7 @@ def import_rkd_data(filename: str):
                 image_url=work["image_url"],
                 is_painting=work["is_painting"],
                 id_in_source=work["source"],
+                source='rkd'
             )
             work_obj.save()
 
