@@ -23,6 +23,7 @@
                     }
                     @case (2) {
                         <hl-one-out-game
+                            (completed)="onSuccess(successModal, 2)"
                             (focus)="focus.set($event)" />
                     }
 
@@ -88,6 +89,13 @@
                     (click)="setStage(2); modal.close()">
                     Volgend onderdeel
                 </button>
+            }
+            @case (2) {
+                <a class="btn btn-success"
+                    (click)="modal.close()"
+                    [routerLink]="['/home']">
+                    Sluit casus
+            </a>
             }
         }
     </div>

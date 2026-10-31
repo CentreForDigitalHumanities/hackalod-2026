@@ -55,7 +55,6 @@ export class OneOutGame {
         } else {
             if (index == this.correct) {
                 setTimeout(() => {
-                    alert('Correct!');
                     this.completed.emit();
                 });
             } else {
