@@ -128,7 +128,8 @@
         "fields": {
             "label": "Judith & Holofernes",
             "question1": 1,
-            "question2": 1
+            "question2": 1,
+            "reward_text": "Wanneer haar stad wordt belegerd door de wraakbeluste legerheer Holofernes besluit Judith haar volk te redden. Ze trekt haar mooiste kleding aan en pakt haar beste kruiken wijn. Met gevaar voor eigen leven meldt ze zich met haar dienstmeid bij de tent van de legerleider. Hij laat haar binnen en laat zich de wijn goed smaken. In plaats van een wilde nacht, komt hij op een gruwelijke wijze om het leven. Judith hakt hem zonder pardon zijn hoofd af, en stopt het in een tas. Als de soldaten ’s ochtends het verminkte lijk van hun legeraanvoerder vinden, dan vluchten ze halsoverkop de stad uit. Wil je meer weten over deze dappere Judith, <a target=\"_blank\" href=\"https://nl.wikipedia.org/wiki/Judit_(boek)\">klik hier</a>!"
         }
     },
     {
@@ -137,7 +138,8 @@
         "fields": {
             "label": "Lazarus",
             "question1": 2,
-            "question2": 2
+            "question2": 2,
+            "reward_text": "Aan de rijkgevulde tafel, bekleed met wit damast zit een rijke man uitgebreid te dineren. Aan zijn zijde speelt zijn jonge knappe echtgenote met haar schoothondje. Dit is niet de enige hond op het schilderij. Twee hazewindhonden likken de wonden van de arme bedelaar op de rechterkant van het werk. Zij zijn de enigen die zich om hem bekommeren, want op de vraag of hij een kruimeltje van de tafel mag mee-eten is het antwoord nee. Deze hebzucht komt de rijkaard overigens duur te staan. Op de achtergrond zien we hem branden in de hel. Lazarus mag rusten in de hemel, op Abrahams schoot. Wil je meer weten over de rijke man en Lazarus, <a target=\"_blank\" href=\"https://nl.wikipedia.org/wiki/Gelijkenis_van_de_rijke_man_en_Lazarus\">klik hier</a>!"
         }
     },
     {
@@ -146,7 +148,8 @@
         "fields": {
             "label": "Orfeus & de dieren",
             "question1": 3,
-            "question2": 3
+            "question2": 3,
+            "reward_text": "Orpheus kan betoverend mooi spelen op zijn lier. Dat is ook niet vreemd met Apollo als leermeester en een muze als moeder. Op dit werk heeft schilder Paulus Potter omringd door echte en mythische dieren, die worden betoverd door zijn spel. Het talent van Orpheus komt hem goed van pas, als zijn vrouw Euridice sterft door de beet van een adder. Hij betovert met zijn spel de koning van de onderwereld en krijgt zo voor elkaar dat hij zijn vrouw uit deze duistere plek kan bevrijden. Onder één voorwaarde, hij mag als hij naar buiten kijkt niet omkijken… Je raadt het al, hij kan zich niet bedwingen en ziet zijn vrouw voor eeuwig verdwijnen in de duisternis."
         }
     },
     {
@@ -155,7 +158,8 @@
         "fields": {
             "label": "Familieportret",
             "question1": 4,
-            "question2": 4
+            "question2": 4,
+            "reward_text": "Dit zijn vluchtelingen. De familie van <a target=\"_blank\" href=\"https://nl.wikipedia.org/wiki/Pierre_de_Moucheron\">Pierre de Moucheron</a> moest hun woonplaats, verlaten en vestigden zich in <a target=\"_blank\" href=\"https://zoeken.collectiezeeland.nl/zoeken/collectiekeuze=1/groep=Objecten/groep=Verhalen/groep=Beeldbank/groep=Geluidsbank%20Zeeland/groep=Kranten%20en%20tijdschriften/groep=Museumbibliotheek/groep=Natuurhistorie/Vrij_zoeken=middelburg/endless_scroll=off/aantalpp=12/?nav_id=1-0\">Middelburg</a>. Het waren protestanten, die zich in het katholieke Antwerpen niet meer thuis voelden. Het gezin, met maar liefst 18 kinderen, werd snel opgenomen in de stad. Pierre de Moucheron was zoals je kunt zien een rijke handelaar. De tafel is rijk gedekt, en zijn kinderen zien er welvarend uit. Ze dragen prachtige sierraden, hebben speelgoed vast of spelen musiceren. Hij en zijn medevluchtelingen brachten welvaart naar de stad. Toch was niet iedereen tevreden. Sommige katholieke bewoners verlieten op hun beurt de stad, omdat ze zich tussen de nieuwkomers niet meer thuis voelden."
         }
     }
 ]

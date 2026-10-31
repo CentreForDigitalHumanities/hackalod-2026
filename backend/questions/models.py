@@ -48,7 +48,8 @@ class Casus(models.Model):
     label = models.CharField(max_length=500)
     question1 = models.ForeignKey(DescribeQuestion, on_delete=models.CASCADE)
     question2 = models.ForeignKey(OneOutQuestion, on_delete=models.CASCADE)
-    # question3 = TO BE IMPLEMENTED
+
+    reward_text = models.TextField()
 
     def __str__(self):
         return f"{self.id}: {self.label}"
