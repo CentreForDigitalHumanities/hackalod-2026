@@ -12,7 +12,7 @@ def import_rkd_data(filename: str):
         print(f"Importing {len(data[ic_code])} works from {ic_code}")
         work_data = data[ic_code]
         for work in work_data:
-            if Work.objects.filter(ic_code=ic_code).exists():
+            if Work.objects.filter(id_in_source=work["source"]).exists():
                 print(f"Skipping {ic_code} as it already exists")
                 continue
             work_obj = Work(
