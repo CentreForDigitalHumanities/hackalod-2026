@@ -14,8 +14,9 @@
         <div class="flex-grow-1">
             <div class="row h-100 align-items-center">
                 <div class="col-3"></div>
-                <div class="col-6">
-                    <img src="/uu-cdh.svg" />
+                <div class="col-6 text-center">
+                    <img [src]="question.target_work.image_url"
+                        style="height: 300px;" />
                 </div>
                 <div class="col-3">
                     <hl-keyword-input [question]="question"
