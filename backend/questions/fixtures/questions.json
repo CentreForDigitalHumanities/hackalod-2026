@@ -3,7 +3,7 @@
         "model": "questions.work",
         "pk": 1,
         "fields": {
-            "image_url": "http://localhost:8000/static/iconclass_ai_set/images/IIHIM_-1112177387.jpg"
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/judith/judith.png"
         }
     },
     {
@@ -11,12 +11,75 @@
         "pk": 1,
         "fields": {
             "target_work": 1,
-            "ic_code": "94O511",
-            "label": "Orpheus",
+            "ic_code": "71U42731",
+            "label": "Judith & Holofernes (question 1)",
             "keywords": {
-                "instrument": ["lier,gitaartje"],
-                "persoon": ["orfeus", "orpheus", "peter"]
+                "dode man": ["hoofd", "afgehakt hoofd", "dode man"],
+                "vrouw": ["vrouw", "vrouwen"],
+                "wapen": ["zwaard", "mes"]
             }
+        }
+    },
+    {
+        "model": "questions.oneoutquestion",
+        "pk": 1,
+        "fields": {
+            "target_ic_code": "71U42731",
+            "context_ic_code": "73C13341",
+            "label": "Judith & Holofernes (question 2)",
+            "hint": "Let eens op een wapen?"
+        }
+    },
+    {
+        "model": "questions.work",
+        "pk": 2,
+        "fields": {
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/lazarus/lazarus.png"
+        }
+    },
+    {
+        "model": "questions.describequestion",
+        "pk": 2,
+        "fields": {
+            "target_work": 2,
+            "ic_code": "73C852",
+            "label": "Lazarus",
+            "keywords": {
+                "tafel": ["tafel", "tafeltje"],
+                "bedelaar": ["bedelaar", "zwerver"],
+                "hond": ["hond", "hondje"]
+            }
+        }
+    },
+    {
+        "model": "questions.work",
+        "pk": 3,
+        "fields": {
+            "image_url": "http://localhost:8000/api/datasets/images/curated_cases/orfeus/orfeus.png"
+        }
+    },
+    {
+        "model": "questions.describequestion",
+        "pk": 3,
+        "fields": {
+            "target_work": 3,
+            "ic_code": "94O511",
+            "label": "Orfeus & de dieren (question 1)",
+            "keywords": {
+                "olifant": ["olifant"],
+                "man": ["man"],
+                "eenhoorn": ["eenhoorn"]
+            }
+        }
+    },
+    {
+        "model": "questions.oneoutquestion",
+        "pk": 2,
+        "fields": {
+            "target_ic_code": "94O511",
+            "context_ic_code": "94O21",
+            "label": "Orfeus & de dieren (question 2)",
+            "hint": "???"
         }
     }
 ]

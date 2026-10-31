@@ -15,6 +15,7 @@ from questions import views as question_views
 
 api_router = routers.DefaultRouter()  # register viewsets with this router
 api_router.register(r'describe-questions', question_views.DescribeQuestionViewset)
+api_router.register(r'one-out-questions', question_views.OneOutQuestionViewset)
 
 if settings.PROXY_FRONTEND:
     spa_url = re_path(r'^(?P<path>.*)$', proxy_frontend)

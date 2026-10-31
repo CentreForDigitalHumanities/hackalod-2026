@@ -2,7 +2,7 @@ import os.path as op
 
 from django.urls import reverse
 from rest_framework import serializers
-from questions.models import DescribeQuestion, Work
+from questions.models import DescribeQuestion, OneOutQuestion, Work
 
 class WorkSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +15,9 @@ class DescribeQuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = DescribeQuestion
         fields = ('id', 'target_work', 'ic_code', 'label', 'keywords')
+
+
+class OneOutQuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OneOutQuestion
+        fields = ('id', 'label', 'target_ic_code', 'context_ic_code', 'hint')
