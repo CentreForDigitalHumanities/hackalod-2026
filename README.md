@@ -27,6 +27,8 @@ This project was a collaboration between the ArtLab at the Research Software Lab
 
 ![](./screenshots/screenshot_1.png)
 
+![](./screenshots/screenshot_8.png)
+
 ![](./screenshots/screenshot_2.png)
 
 ![](./screenshots/screenshot_3.png)
