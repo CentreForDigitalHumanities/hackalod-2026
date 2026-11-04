@@ -1,13 +1,24 @@
 cff-version: 1.2.0
-title: 'HackaLod'
+title: 'DECODE/Art_detective'
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
 authors:
-  - name: 'Research Software Lab, Centre for Digital Humanities, Utrecht University'
-    website: 'https://cdh.uu.nl/about/research-software-lab/'
-repository-code: 'github:CentreForDigitalHumanities/hackalod'
-abstract: >-
-  HackaLod will humanize all your digits!
+  - given-names: Tijmen
+    family-names: Baarda
+  - given-names: Cuno
+    family-names: Balfoort
+  - given-names: Jelte
+    name-particle: van
+    family-names: Boheemen
+  - given-names: Sanne
+    family-names: Frequin
+  - given-names: Sjors
+    family-names: Nab
+  - given-names: Luka
+    name-particle: van der
+    family-names: Plas
+repository-code: 'https://github.com/CentreForDigitalHumanities/hackalod-2026'
 license: BSD-3
+date-released: 31-10,2026
