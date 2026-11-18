@@ -1,30 +1,53 @@
-# HackaLod
+# HackaLOD 2026: DECODE/Art_detective
 
-[![Actions Status](https://github.com/CentreForDigitalHumanities/hackalod/workflows/Unit%20tests/badge.svg)](https://github.com/CentreForDigitalHumanities/hackalod/actions)
+On October 30th-31st 2026, the Centre for Digital Humanities participated in [HackaLOD](https://netwerkdigitaalerfgoed.nl/hackalod/). Alongside 10 other teams, we had 24 hours to develop an an application that would combine Linked Open Data from multiple cultural heritage institutions and show the value of linked cultural heritage data to a general public.
 
-HackaLod will humanize all your digits!
+For this challenge, we created **DECODE/Art_detective**, a game where players can step into the workspace of an art historian and learn to decode and connect works of art.
 
-*This repository is a work in progress, and the README is not yet complete!*
+Art historians have been trying to categorise art for centuries. By labelling something, you can compare and identify it. In the 1950s, Dutch art historian Hans de Waal tried to develop a systematic method to code and index the subjects, themes and motifs in Western visual art. This code, [iconclass](https://iconclass.org/), is a hierarchical system that categorises artworks based on their visual content. The game uses this system to let players analyse and compare works based on their content.
 
-## Introduction
+The game consists of a set of hand-picked case studies, each centred around a single art work. Per case study, players are first tasked to describe what they see. This minigame is completed by entering keywords for visual elements of the work. To help them out, players can look at a gallery of similar works, and consult a "library" with hints and background information.
 
-*In this section, provide an overview of your code and describe the project in which the code was developed. Highlight the purpose, scope, and potential uses of your code. Also, consider including links to relevant publications or resources that provide additional context.*
+In the second minigame, players are given four works to compare, and asked to select the odd one out. Here, players can make use of the visual elements they identified in the previous game.
 
-## Getting started
+To show comparable works, the game draws from the collections of the [RKD](https://www.rkd.nl/) and [Rijksmuseum](https://www.rijksmuseum.nl/). It uses the iconclass categorisations in these collections to identify similar works. In this way, the game can link works that would never be hung in the same room in the physical world, and encourage players to draw new connections in our cultural heritage.
 
-HackaLod is a web application: it can be accessed using a web browser.
+## Creators
 
-*If you are hosting HackaLod anywhere, provide a URL and any additional info.*
+This project was a collaboration between the ArtLab at the Research Software Lab at the Centre for Digital Humanities, Utrecht University. Our team consisted of (in alphabetical order):
 
-You can also run HackaLod locally or host it yourself. Be aware that this is a more advanced option. See [CONTRIBUTING.md](./CONTRIBUTING.md) for information about setting up a local server or configuring deployment.
+- Tijmen Baarda
+- Cuno Balfoort
+- Jelte van Boheemen
+- Sanne Frequin
+- Sjors Nab
+- Luka van der Plas
 
-## Usage
+## Screenshots
 
-*Provide information about what HackaLod can be used for. If you have written a user manual, this is the place to link it!*
+![](./screenshots/screenshot_1.png)
 
-## Development
+![](./screenshots/screenshot_8.png)
 
-To get started with developing HackaLod, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+![](./screenshots/screenshot_2.png)
+
+![](./screenshots/screenshot_3.png)
+
+![](./screenshots/screenshot_4.png)
+
+![](./screenshots/screenshot_5.png)
+
+![](./screenshots/screenshot_6.png)
+
+![](./screenshots/screenshot_7.png)
+
+## Contents
+
+This repository contains the code we created during the HackaLOD event. This builds on the [cookiecutter web application](https://github.com/CentreForDigitalHumanities/cookiecutter-webapp-deluxe) maintained by the Research Software Lab. It consists of a Django backend and Angular frontend.
+
+Background images for the interface were created in Blender during the Hackathon event.
+
+Due to the nature of the challenge, this code is *not* production ready.
 
 ## Licence
 
@@ -36,6 +59,4 @@ To cite this repository, please use the metadata provided in [CITATION.cff](./CI
 
 ## Contact
 
-HackaLod is developed by [Research Software Lab, Centre for Digital Humanities, Utrecht University](https://cdh.uu.nl/about/research-software-lab/).
-
-*Include contact information. You can also provide clear instructions for how users can provide feedback, contribute, or suggest improvements to your work.*
+This project is developed by the [ArtLab, Centre for Digital Humanities, Utrecht University](https://cdh.uu.nl/about/artlab/) and [Research Software Lab, Centre for Digital Humanities, Utrecht University](https://cdh.uu.nl/about/research-software-lab/). Please contact the [Centre for Digital Humanities](https://cdh.uu.nl/about/contact/) if you have questions.
